@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-/* ── CAROUSEL TRACK ── */
 .live-carousel-wrap {
   position: relative;
 }
@@ -23,7 +22,6 @@
   .live-track { grid-template-columns: 1fr; }
 }
 
-/* ── CARD — same as press ── */
 .live-card {
   display: block;
   background: var(--bg2);
