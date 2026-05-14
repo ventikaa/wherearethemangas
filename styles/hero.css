@@ -57,7 +57,7 @@
   font-family: var(--font-s);
   font-size: 11px;
   letter-spacing: .45em;
-  color: var(--fg-dim);
+  color: rgba(237,228,208,.9);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -79,13 +79,12 @@
 }
 @keyframes h1-typing { from{width:0} to{width:calc(6ch + 0.6em)} }
 @keyframes h1-cursor { 0%,100%{border-color:var(--fg)} 50%{border-color:transparent} }
-
 .hero-sub {
   font-family: var(--font-s);
   font-size: clamp(10px,1.3vw,13px);
   letter-spacing: .35em;
   text-transform: uppercase;
-  color: var(--fg-dim);
+  color: rgba(237,228,208,.9);
   margin-top: 22px;
 }
 .hero-sub::after {
