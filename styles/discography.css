@@ -136,16 +136,20 @@
 /* left */
 .ep-left {
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: var(--bg3);
 }
+
 .ep-left img {
   width: 100%;
-  height: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
   object-fit: cover;
   display: block;
-  flex: 1;
 }
 .ep-cover-label {
   font-family: var(--font-s);
