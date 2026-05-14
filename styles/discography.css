@@ -147,19 +147,41 @@
 @media(max-width:700px) {
   .ep-block { grid-template-columns: 1fr; }
 }
-
-/* left — main cover */
+/* left — main cover: constrain to square */
 .ep-left {
   position: relative;
-  overflow: hidden;
-}
-.ep-left img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  overflow: visible; /* changed from hidden */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 36px 32px;
 }
 
+.ep-cover-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ep-left img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  height: auto; /* override the height:100% */
+}
+
+.ep-cover-desc {
+  font-family: var(--font-s);
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 16px;
+}
 /* right — info + tracks */
 .ep-right {
   padding: 36px 32px;
