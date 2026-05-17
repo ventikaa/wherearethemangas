@@ -15,11 +15,11 @@ const showData = {
   'summer-bang': {
     title: 'Summer Bang House Party',
     photos: [
-      'pics/shows/summer-bang-1.jpg',
-      'pics/shows/summer-bang-2.jpg',
-      'pics/shows/summer-bang-3.jpg',
-      'pics/shows/summer-bang-4.jpg',
-      'pics/shows/summer-bang-5.jpg',
+      'pics/houseparty1.jpeg',
+      'pics/houseparty2.jpeg',
+      'pics/houseparty3.jpeg',
+      'pics/houseparty4.jpeg',
+      'pics/houseparty5.jpeg',
     ]
   },
   'turn-up-devoid': {
