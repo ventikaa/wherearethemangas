@@ -23,6 +23,7 @@
   overflow: hidden;
   transition: border-color .2s;
   cursor: pointer;
+  min-height: 400px;
 }
 .festival-card:hover {
   border-color: rgba(191,28,18,.35);
@@ -35,18 +36,16 @@
 .festival-poster {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 2/3;
 }
 .festival-poster img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(20%) brightness(.9);
-  transition: transform .4s, filter .3s;
+  transition: transform .4s;
 }
 .festival-card:hover .festival-poster img {
   transform: scale(1.03);
-  filter: grayscale(0) brightness(1);
 }
 .festival-fallback {
   width: 100%; height: 100%;
@@ -60,13 +59,16 @@
   text-align: center;
   background: var(--bg3);
   padding: 16px;
+  min-height: 400px;
 }
 
-/* right side: photo grid + info */
-.festival-photos {
+/* right side */
+.festival-right {
   display: flex;
   flex-direction: column;
 }
+
+/* 2x2 photo grid */
 .festival-photos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -76,29 +78,27 @@
   background: var(--bg3);
 }
 .festival-photos-grid img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(40%) brightness(.8) contrast(1.1);
-  transition: filter .3s, transform .3s;
   aspect-ratio: 4/3;
+  filter: grayscale(30%) brightness(.85) contrast(1.05);
+  transition: filter .3s, transform .3s;
 }
 .festival-card:hover .festival-photos-grid img {
-  filter: grayscale(10%) brightness(.95);
-}
-.festival-photos-grid.no-photo {
-  background: var(--bg3);
-  border: 1px dashed var(--fg-off);
+  filter: grayscale(0) brightness(1);
 }
 
 /* info bar */
 .festival-info {
-  padding: 20px 24px;
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 20px 24px;
   border-top: 1px solid rgba(191,28,18,.15);
   flex-wrap: wrap;
+  background: var(--bg2);
 }
 .festival-label {
   font-family: var(--font-s);
@@ -109,6 +109,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 .festival-label::before { content: '//'; opacity: .5; }
 .festival-title {
@@ -137,6 +138,7 @@
   padding: 8px 16px;
   cursor: pointer;
   transition: background .15s, color .15s;
+  white-space: nowrap;
 }
 .festival-gallery-btn:hover {
   background: var(--red);
@@ -145,6 +147,7 @@
 
 /* ── LIVE SHOW CARDS ── */
 .live-carousel-wrap { position: relative; }
+
 .live-track {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
