@@ -97,9 +97,9 @@
 }
 .release-desc {
   font-family: var(--font-s);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.75;
-  color: var(--fg-dim);
+  color: var(--fg-off);
   font-style: italic;
   border-left: 2px solid rgba(191,28,18,.4);
   padding-left: 14px;
