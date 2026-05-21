@@ -106,5 +106,30 @@
   clip-path: polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);
   transition: background .14s, transform .12s;
 }
+
+.hero-socials {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  z-index: 2;
+}
+.hero-social-link {
+  width: 36px; height: 36px;
+  color: rgba(240,237,232,.5);
+  transition: color .2s, transform .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-social-link svg {
+  width: 20px; height: 20px;
+}
+.hero-social-link:hover {
+  color: var(--fg);
+  transform: translateY(-3px);
+}
 .hero-cta:hover { background: var(--fg); transform: translate(-2px,-2px); }
 .hero-cta:active { transform: translate(1px,1px); }
