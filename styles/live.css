@@ -23,7 +23,6 @@
   overflow: hidden;
   transition: border-color .2s;
   cursor: pointer;
-  min-height: 400px;
 }
 .festival-card:hover {
   border-color: rgba(191,28,18,.35);
@@ -32,25 +31,26 @@
   .festival-card { grid-template-columns: 1fr; }
 }
 
-/* poster */
 .festival-poster {
-  position: relative;
-  overflow: hidden;
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 .festival-poster img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
-  object-position: center;
   display: block;
   transition: transform .4s;
-  background: var(--bg3);
 }
 .festival-card:hover .festival-poster img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 .festival-fallback {
-  width: 100%; height: 100%;
+  width: 100%;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,39 +60,34 @@
   color: var(--fg-off);
   text-align: center;
   background: var(--bg3);
-  padding: 16px;
-  min-height: 400px;
+  padding: 24px;
 }
 
-/* right side */
 .festival-right {
   display: flex;
   flex-direction: column;
 }
 
-/* 2x2 photo grid */
 .festival-photos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  flex: 1;
   gap: 3px;
+  flex: 1;
   background: var(--bg3);
 }
 .festival-photos-grid img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
   aspect-ratio: 4/3;
-  filter: grayscale(30%) brightness(.85) contrast(1.05);
-  transition: filter .3s, transform .3s;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(20%) brightness(.9) contrast(1.05);
+  transition: filter .3s;
 }
 .festival-card:hover .festival-photos-grid img {
   filter: grayscale(0) brightness(1);
 }
 
-/* info bar */
 .festival-info {
   display: flex;
   align-items: center;
