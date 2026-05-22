@@ -167,6 +167,7 @@
 
 .live-track-outer {
   overflow: hidden;
+  width: 100%;
 }
 
 .live-track {
