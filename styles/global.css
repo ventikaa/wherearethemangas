@@ -95,7 +95,7 @@ body::after {
 }
 .break-section img {
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   object-fit: cover;
   object-position: center;
   filter: grayscale(60%) brightness(.55) contrast(1.15);
