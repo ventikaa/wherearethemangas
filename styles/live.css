@@ -76,6 +76,7 @@
   display: grid;
   grid-template-rows: 1fr 64px;
   overflow: hidden;
+  border-left: 6px solid var(--bg);
 }
 
 .festival-photos-grid {
