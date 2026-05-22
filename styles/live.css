@@ -37,7 +37,6 @@
 
 .festival-left {
   position: relative;
-  overflow: hidden;
   background: var(--bg3);
   display: flex;
   align-items: center;
@@ -80,10 +79,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 3px;
+  gap: 6px;
+  padding: 6px;
   overflow: hidden;
   background: var(--bg3);
 }
+
 .festival-photos-grid img {
   width: 100%;
   height: 100%;
