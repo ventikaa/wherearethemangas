@@ -163,6 +163,7 @@
 .live-carousel-wrap {
   position: relative;
   padding: 0 48px;
+  box-sizing: border-box;
 }
 
 .live-track-outer {
@@ -175,10 +176,12 @@
   gap: 20px;
   transition: transform .4s ease;
   will-change: transform;
+  width: 100%;
 }
 
+
 .live-card {
-  flex: 0 0 calc(33.333% - 14px);
+  flex: 0 0 calc((100% - 40px) / 3);
   min-width: 0;
   background: var(--bg2);
   border: 1px solid transparent;
