@@ -106,6 +106,39 @@ function initCarousel() {
   }
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // carousel
+const track = document.getElementById('liveTrack');
+const prevBtn = document.querySelector('.live-prev');
+const nextBtn = document.querySelector('.live-next');
+const dotsEl  = document.getElementById('liveDots');
+
+if (track && prevBtn && nextBtn) {
+  const cards    = track.querySelectorAll('.live-card');
+  const perPage  = window.innerWidth <= 768 ? 1 : 3;
+  const total    = Math.ceil(cards.length / perPage);
+  let page       = 0;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.classList.add('live-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToPage(i));
+    dotsEl.appendChild(dot);
+  }
+
+  function goToPage(p) {
+    page = p;
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
+    dotsEl.querySelectorAll('.live-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === page);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => goToPage(Math.max(0, page - 1)));
+  nextBtn.addEventListener('click', () => goToPage(Math.min(total - 1, page + 1)));
+}
 }
 
 function initLiveShows() {
