@@ -45,8 +45,8 @@
   overflow: hidden;
 }
 .festival-left img {
-  max-width: calc(100% - 12px);
-  max-height: calc(100% - 12px);
+  max-width: calc(100% - 18px);
+  max-height: calc(100% - 18px);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -83,7 +83,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 6px;
-  padding: 6px;
+  padding: 12px;
   overflow: hidden;
   background: var(--bg3);
 }
