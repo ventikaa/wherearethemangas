@@ -41,16 +41,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 32px;
   overflow: hidden;
 }
 .festival-left img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100% - 64px);
+  max-height: calc(100% - 64px);
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  margin: auto;
   transition: transform .4s;
 }
 .festival-card:hover .festival-left img {
