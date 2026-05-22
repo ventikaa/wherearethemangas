@@ -45,8 +45,8 @@
   overflow: hidden;
 }
 .festival-left img {
-  max-width: calc(100% - 64px);
-  max-height: calc(100% - 64px);
+  max-width: calc(100% - 12px);
+  max-height: calc(100% - 12px);
   width: auto;
   height: auto;
   object-fit: contain;
