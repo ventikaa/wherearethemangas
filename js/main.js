@@ -1,13 +1,12 @@
 const includes = [
   { id: 'include-navbar',      file: 'sections/navbar.html' },
   { id: 'include-hero',        file: 'sections/hero.html' },
-  { id: 'include-ticker',      file: 'sections/ticker.html' },
   { id: 'include-new-release', file: 'sections/new-release.html' },
   { id: 'include-bio',         file: 'sections/bio.html' },
   { id: 'include-discography', file: 'sections/discography.html' },
-  { id: 'include-break', file: 'sections/break.html' }, 
+  { id: 'include-break',       file: 'sections/break.html' },
   { id: 'include-live',        file: 'sections/live.html' },
-  { id: 'include-press',       file: 'sections/press.html' }, 
+  { id: 'include-press',       file: 'sections/press.html' },
   { id: 'include-photo-strip', file: 'sections/photo-strip.html' },
   { id: 'include-footer',      file: 'sections/footer.html' },
 ];
@@ -43,6 +42,139 @@ const showData = {
       'pics/shows/running-in-circles-5.jpg',
     ]
   },
+  'bangalore-bychance': {
+    title: 'Bangalore Bychance',
+    photos: [
+      'pics/shows/bangalore-bychance-1.jpg',
+      'pics/shows/bangalore-bychance-2.jpg',
+      'pics/shows/bangalore-bychance-3.jpg',
+      'pics/shows/bangalore-bychance-4.jpg',
+      'pics/shows/bangalore-bychance-5.jpg',
+    ]
+  },
+  'fandom': {
+    title: 'Fandom',
+    photos: [
+      'pics/shows/fandom-1.jpg',
+      'pics/shows/fandom-2.jpg',
+      'pics/shows/fandom-3.jpg',
+      'pics/shows/fandom-4.jpg',
+      'pics/shows/fandom-5.jpg',
+    ]
+  },
+  'iit-madras': {
+    title: 'IIT Madras',
+    photos: [
+      'pics/shows/iit-madras-1.jpg',
+      'pics/shows/iit-madras-2.jpg',
+      'pics/shows/iit-madras-3.jpg',
+      'pics/shows/iit-madras-4.jpg',
+      'pics/shows/iit-madras-5.jpg',
+    ]
+  },
+  'octavia': {
+    title: 'Octavia — MCC',
+    photos: [
+      'pics/shows/octavia-1.jpg',
+      'pics/shows/octavia-2.jpg',
+      'pics/shows/octavia-3.jpg',
+      'pics/shows/octavia-4.jpg',
+      'pics/shows/octavia-5.jpg',
+    ]
+  },
+  'festember': {
+    title: 'NIT Trichy Festember',
+    photos: [
+      'pics/shows/festember-1.jpg',
+      'pics/shows/festember-2.jpg',
+      'pics/shows/festember-3.jpg',
+      'pics/shows/festember-4.jpg',
+      'pics/shows/festember-5.jpg',
+    ]
+  },
+  'circle-of-love-nye': {
+    title: 'Circle of Love NYE',
+    photos: [
+      'pics/shows/circle-of-love-nye-1.jpg',
+      'pics/shows/circle-of-love-nye-2.jpg',
+      'pics/shows/circle-of-love-nye-3.jpg',
+      'pics/shows/circle-of-love-nye-4.jpg',
+      'pics/shows/circle-of-love-nye-5.jpg',
+    ]
+  },
+  'phoenix': {
+    title: 'Phoenix Market City',
+    photos: [
+      'pics/shows/phoenix-1.jpg',
+      'pics/shows/phoenix-2.jpg',
+      'pics/shows/phoenix-3.jpg',
+      'pics/shows/phoenix-4.jpg',
+      'pics/shows/phoenix-5.jpg',
+    ]
+  },
+  'summer-bang-3': {
+    title: 'Summer Bang Chapter 3',
+    photos: [
+      'pics/shows/summer-bang-3-1.jpg',
+      'pics/shows/summer-bang-3-2.jpg',
+      'pics/shows/summer-bang-3-3.jpg',
+      'pics/shows/summer-bang-3-4.jpg',
+      'pics/shows/summer-bang-3-5.jpg',
+    ]
+  },
+  'the-park': {
+    title: 'The Park Hotel',
+    photos: [
+      'pics/shows/the-park-1.jpg',
+      'pics/shows/the-park-2.jpg',
+      'pics/shows/the-park-3.jpg',
+      'pics/shows/the-park-4.jpg',
+      'pics/shows/the-park-5.jpg',
+    ]
+  },
+};
+
+const festivalData = {
+  'circle-of-love-2023': {
+    title: 'Circle of Love 2023',
+    photos: [
+      'pics/festivals/circle-of-love-2023-1.jpg',
+      'pics/festivals/circle-of-love-2023-2.jpg',
+      'pics/festivals/circle-of-love-2023-3.jpg',
+      'pics/festivals/circle-of-love-2023-4.jpg',
+      'pics/festivals/circle-of-love-2023-5.jpg',
+    ]
+  },
+  'covelong-2023': {
+    title: 'Surf Turf Covelong 2023',
+    photos: [
+      'pics/festivals/covelong-2023-1.jpg',
+      'pics/festivals/covelong-2023-2.jpg',
+      'pics/festivals/covelong-2023-3.jpg',
+      'pics/festivals/covelong-2023-4.jpg',
+      'pics/festivals/covelong-2023-5.jpg',
+    ]
+  },
+  'ric-chennai': {
+    title: 'Running in Circles Tour — Chennai',
+    photos: [
+      'pics/festivals/ric-chennai-1.jpg',
+      'pics/festivals/ric-chennai-2.jpg',
+      'pics/festivals/ric-chennai-3.jpg',
+      'pics/festivals/ric-chennai-4.jpg',
+      'pics/festivals/ric-chennai-5.jpg',
+    ]
+  },
+  'ric-bangalore': {
+    title: 'Running in Circles Tour — Bangalore',
+    photos: [
+      'pics/festivals/ric-bangalore-1.jpg',
+      'pics/festivals/ric-bangalore-2.jpg',
+      'pics/festivals/ric-bangalore-3.jpg',
+      'pics/festivals/ric-bangalore-4.jpg',
+      'pics/festivals/ric-bangalore-5.jpg',
+    ]
+  },
 };
 
 async function loadIncludes() {
@@ -61,6 +193,7 @@ async function loadIncludes() {
   initReveal();
   initCarousel();
   initLiveShows();
+  initLiveCarousel();
 }
 
 function initReveal() {
@@ -106,39 +239,39 @@ function initCarousel() {
   }
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
+}
 
-  // carousel
-const track = document.getElementById('liveTrack');
-const prevBtn = document.querySelector('.live-prev');
-const nextBtn = document.querySelector('.live-next');
-const dotsEl  = document.getElementById('liveDots');
+function initLiveCarousel() {
+  const liveTrack  = document.getElementById('liveTrack');
+  const livePrev   = document.querySelector('.live-prev');
+  const liveNext   = document.querySelector('.live-next');
+  const liveDotsEl = document.getElementById('liveDots');
+  if (!liveTrack || !livePrev || !liveNext) return;
 
-if (track && prevBtn && nextBtn) {
-  const cards    = track.querySelectorAll('.live-card');
-  const perPage  = window.innerWidth <= 768 ? 1 : 3;
-  const total    = Math.ceil(cards.length / perPage);
-  let page       = 0;
+  const liveCards = liveTrack.querySelectorAll('.live-card');
+  const perPage   = window.innerWidth <= 768 ? 1 : 3;
+  const total     = Math.ceil(liveCards.length / perPage);
+  let page        = 0;
 
   for (let i = 0; i < total; i++) {
     const dot = document.createElement('button');
     dot.classList.add('live-dot');
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', () => goToPage(i));
-    dotsEl.appendChild(dot);
+    liveDotsEl.appendChild(dot);
   }
 
   function goToPage(p) {
     page = p;
-    const cardWidth = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
-    dotsEl.querySelectorAll('.live-dot').forEach((d, i) => {
+    const cardWidth = liveCards[0].offsetWidth + 20;
+    liveTrack.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
+    liveDotsEl.querySelectorAll('.live-dot').forEach((d, i) => {
       d.classList.toggle('active', i === page);
     });
   }
 
-  prevBtn.addEventListener('click', () => goToPage(Math.max(0, page - 1)));
-  nextBtn.addEventListener('click', () => goToPage(Math.min(total - 1, page + 1)));
-}
+  livePrev.addEventListener('click', () => goToPage(Math.max(0, page - 1)));
+  liveNext.addEventListener('click', () => goToPage(Math.min(total - 1, page + 1)));
 }
 
 function initLiveShows() {
@@ -158,35 +291,43 @@ function initLiveShows() {
   let currentPhotos = [];
   let currentIndex  = 0;
 
+  function openModal(title, photos) {
+    modalTitle.textContent = title;
+    modalGrid.innerHTML = '';
+    photos.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.classList.add('grid-photo');
+      const img = document.createElement('img');
+      img.alt = `${title} — ${i + 1}`;
+      img.src = src;
+      img.onerror = () => {
+        div.classList.add('placeholder');
+        div.innerHTML = '<span>Photo Coming Soon</span>';
+      };
+      img.addEventListener('click', () => openLightbox(photos, i));
+      div.appendChild(img);
+      modalGrid.appendChild(div);
+    });
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
   document.querySelectorAll('.live-card').forEach(card => {
     card.addEventListener('click', () => {
       const key  = card.dataset.show;
       const data = showData[key];
       if (!data) return;
+      openModal(data.title, data.photos);
+    });
+  });
 
-      modalTitle.textContent = data.title;
-      modalGrid.innerHTML = '';
-
-      data.photos.forEach((src, i) => {
-        const div = document.createElement('div');
-        div.classList.add('grid-photo');
-
-        const img = document.createElement('img');
-        img.alt = `${data.title} — ${i + 1}`;
-        img.src = src;
-
-        img.onerror = () => {
-          div.classList.add('placeholder');
-          div.innerHTML = '<span>Photo Coming Soon</span>';
-        };
-
-        img.addEventListener('click', () => openLightbox(data.photos, i));
-        div.appendChild(img);
-        modalGrid.appendChild(div);
-      });
-
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  document.querySelectorAll('.festival-gallery-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const key  = btn.dataset.festival;
+      const data = festivalData[key];
+      if (!data) return;
+      openModal(data.title, data.photos);
     });
   });
 
