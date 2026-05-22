@@ -25,7 +25,6 @@
   cursor: pointer;
   height: 620px;
 }
-
 .festival-card:hover {
   border-color: rgba(191,28,18,.35);
 }
@@ -45,8 +44,8 @@
   overflow: hidden;
 }
 .festival-left img {
-  max-width: calc(100% - 18px);
-  max-height: calc(100% - 18px);
+  max-width: calc(100% - 12px);
+  max-height: calc(100% - 12px);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -88,7 +87,6 @@
   overflow: hidden;
   background: var(--bg3);
 }
-
 .festival-photos-grid img {
   width: 100%;
   height: 100%;
@@ -113,18 +111,6 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-
-.festival-poster-thumb {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  opacity: .7;
-  transition: opacity .2s;
-  flex-shrink: 0;
-}
-.festival-card:hover .festival-poster-thumb { opacity: 1; }
-
 .festival-label {
   font-family: var(--font-s);
   font-size: 10px;
@@ -137,7 +123,6 @@
   flex-shrink: 0;
 }
 .festival-label::before { content: '//'; opacity: .5; }
-
 .festival-title {
   font-family: var(--font-b);
   font-size: clamp(14px,1.6vw,20px);
@@ -146,7 +131,6 @@
   letter-spacing: .05em;
   white-space: nowrap;
 }
-
 .festival-meta {
   font-family: var(--font-s);
   font-size: 10px;
@@ -155,7 +139,6 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
-
 .festival-gallery-btn {
   margin-left: auto;
   font-family: var(--font-s);
@@ -176,17 +159,26 @@
   color: var(--bg);
 }
 
-/* ── LIVE SHOW CARDS ── */
-.live-carousel-wrap { position: relative; }
+/* ── LIVE SHOW CAROUSEL ── */
+.live-carousel-wrap {
+  position: relative;
+  padding: 0 48px;
+}
+
+.live-track-outer {
+  overflow: hidden;
+}
 
 .live-track {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  display: flex;
   gap: 20px;
+  transition: transform .4s ease;
+  will-change: transform;
 }
 
 .live-card {
-  display: block;
+  flex: 0 0 calc(33.333% - 14px);
+  min-width: 0;
   background: var(--bg2);
   border: 1px solid transparent;
   position: relative;
@@ -209,6 +201,11 @@
   z-index: 0;
 }
 .live-card:hover::before { opacity: 1; }
+
+@media(max-width:768px) {
+  .live-card { flex: 0 0 100%; }
+  .live-carousel-wrap { padding: 0 32px; }
+}
 
 .live-img-wrap {
   width: 100%;
@@ -285,14 +282,39 @@
 }
 .live-card:hover .live-arrow { opacity: 1; transform: translateX(0); }
 
+/* prev / next arrows */
+.live-prev,
+.live-next {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background: rgba(8,6,4,.65);
+  border: 1px solid rgba(191,28,18,.35);
+  color: var(--fg);
+  font-size: 20px;
+  width: 40px; height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+  z-index: 2;
+}
+.live-prev { left: 0; }
+.live-next { right: 0; }
+.live-prev:hover,
+.live-next:hover { background: var(--red); border-color: var(--red); }
+
+/* square red dots */
 .live-dots {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   margin-top: 32px;
 }
 .live-dot {
-  width: 8px; height: 8px;
+  width: 12px;
+  height: 12px;
   background: var(--fg-off);
   border: none;
   cursor: pointer;
@@ -301,7 +323,7 @@
 }
 .live-dot.active {
   background: var(--red);
-  transform: scale(1.4);
+  transform: scale(1.2);
 }
 
 /* ── SHOW MODAL ── */
