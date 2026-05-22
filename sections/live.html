@@ -48,184 +48,188 @@
         </div>
       </div>
 
+<!-- ── LIVE SHOWS ── -->
     <div class="section-label reveal" style="margin-top:clamp(80px,12vh,140px)">On Stage</div>
     <h2 class="about-heading reveal" style="margin-bottom:48px">LIVE SHOWS</h2>
 
     <div class="live-carousel-wrap">
-      <div class="live-track">
+      <button class="live-prev">&#8592;</button>
+      <button class="live-next">&#8594;</button>
+      <div class="live-track-outer">
+        <div class="live-track" id="liveTrack">
 
-        <div class="live-card" data-show="summer-bang">
-          <div class="live-img-wrap">
-            <img src="pics/shows/summer-bang-cover.jpg" alt="Summer Bang House Party"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">SUMMER BANG<br>HOUSE PARTY</div>
+          <div class="live-card" data-show="summer-bang">
+            <div class="live-img-wrap">
+              <img src="pics/shows/summer-bang-cover.jpg" alt="Summer Bang House Party"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">SUMMER BANG<br>HOUSE PARTY</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">House Party</div>
+              <div class="live-title">Summer Bang House Party</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
           </div>
-          <div class="live-body">
-            <div class="live-outlet">House Party</div>
-            <div class="live-title">Summer Bang House Party</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
+
+          <div class="live-card" data-show="turn-up-devoid">
+            <div class="live-img-wrap">
+              <img src="pics/shows/turn-up-devoid-cover.jpg" alt="Turn Up for Devoid"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">TURN UP<br>FOR DEVOID</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Turn Up for Devoid</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
           </div>
+
+          <div class="live-card" data-show="running-in-circles">
+            <div class="live-img-wrap">
+              <img src="pics/shows/running-in-circles-cover.jpg" alt="Running in Circles Tour"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">RUNNING IN<br>CIRCLES TOUR</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Tour</div>
+              <div class="live-title">Running in Circles Tour</div>
+              <div class="live-meta">2025</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="bangalore-bychance">
+            <div class="live-img-wrap">
+              <img src="pics/shows/bangalore-bychance-cover.jpg" alt="Bangalore Bychance"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">BANGALORE<br>BYCHANCE</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Bangalore Bychance</div>
+              <div class="live-meta">Bangalore</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="fandom">
+            <div class="live-img-wrap">
+              <img src="pics/shows/fandom-cover.jpg" alt="Fandom"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">FANDOM</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Fandom</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="iit-madras">
+            <div class="live-img-wrap">
+              <img src="pics/shows/iit-madras-cover.jpg" alt="IIT Madras"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">IIT<br>MADRAS</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">IIT Madras</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="octavia">
+            <div class="live-img-wrap">
+              <img src="pics/shows/octavia-cover.jpg" alt="Octavia MCC"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">OCTAVIA<br>MCC</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Octavia — MCC</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="festember">
+            <div class="live-img-wrap">
+              <img src="pics/shows/festember-cover.jpg" alt="NIT Trichy Festember"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">NIT TRICHY<br>FESTEMBER</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Festival</div>
+              <div class="live-title">NIT Trichy Festember</div>
+              <div class="live-meta">Trichy</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="circle-of-love-nye">
+            <div class="live-img-wrap">
+              <img src="pics/shows/circle-of-love-nye-cover.jpg" alt="Circle of Love NYE"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">CIRCLE OF LOVE<br>NYE</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Festival</div>
+              <div class="live-title">Circle of Love NYE</div>
+              <div class="live-meta">2025 – 2026</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="phoenix">
+            <div class="live-img-wrap">
+              <img src="pics/shows/phoenix-cover.jpg" alt="Phoenix Market City"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">PHOENIX<br>MARKET CITY</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Phoenix Market City</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="summer-bang-3">
+            <div class="live-img-wrap">
+              <img src="pics/shows/summer-bang-3-cover.jpg" alt="Summer Bang Chapter 3"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">SUMMER BANG<br>CHAPTER 3</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">First Show</div>
+              <div class="live-title">Summer Bang Chapter 3</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="the-park">
+            <div class="live-img-wrap">
+              <img src="pics/shows/the-park-cover.jpg" alt="The Park Hotel"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">THE PARK<br>HOTEL</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">The Park Hotel</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
         </div>
-
-        <div class="live-card" data-show="turn-up-devoid">
-          <div class="live-img-wrap">
-            <img src="pics/shows/turn-up-devoid-cover.jpg" alt="Turn Up for Devoid"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">TURN UP<br>FOR DEVOID</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">Turn Up for Devoid</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="running-in-circles">
-          <div class="live-img-wrap">
-            <img src="pics/shows/running-in-circles-cover.jpg" alt="Running in Circles Tour"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">RUNNING IN<br>CIRCLES TOUR</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Tour</div>
-            <div class="live-title">Running in Circles Tour</div>
-            <div class="live-meta">2025</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="bangalore-bychance">
-          <div class="live-img-wrap">
-            <img src="pics/shows/bangalore-bychance-cover.jpg" alt="Bangalore Bychance"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">BANGALORE<br>BYCHANCE</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">Bangalore Bychance</div>
-            <div class="live-meta">Bangalore</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="fandom">
-          <div class="live-img-wrap">
-            <img src="pics/shows/fandom-cover.jpg" alt="Fandom"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">FANDOM</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">Fandom</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="iit-madras">
-          <div class="live-img-wrap">
-            <img src="pics/shows/iit-madras-cover.jpg" alt="IIT Madras"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">IIT<br>MADRAS</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">IIT Madras</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="octavia">
-          <div class="live-img-wrap">
-            <img src="pics/shows/octavia-cover.jpg" alt="Octavia MCC"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">OCTAVIA<br>MCC</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">Octavia — MCC</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="festember">
-          <div class="live-img-wrap">
-            <img src="pics/shows/festember-cover.jpg" alt="NIT Trichy Festember"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">NIT TRICHY<br>FESTEMBER</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Festival</div>
-            <div class="live-title">NIT Trichy Festember</div>
-            <div class="live-meta">Trichy</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="circle-of-love-nye">
-          <div class="live-img-wrap">
-            <img src="pics/shows/circle-of-love-nye-cover.jpg" alt="Circle of Love NYE"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">CIRCLE OF LOVE<br>NYE</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Festival</div>
-            <div class="live-title">Circle of Love NYE</div>
-            <div class="live-meta">2025 – 2026</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="phoenix">
-          <div class="live-img-wrap">
-            <img src="pics/shows/phoenix-cover.jpg" alt="Phoenix Market City"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">PHOENIX<br>MARKET CITY</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">Phoenix Market City</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="summer-bang-3">
-          <div class="live-img-wrap">
-            <img src="pics/shows/summer-bang-3-cover.jpg" alt="Summer Bang Chapter 3"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">SUMMER BANG<br>CHAPTER 3</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">First Show</div>
-            <div class="live-title">Summer Bang Chapter 3</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
-        <div class="live-card" data-show="the-park">
-          <div class="live-img-wrap">
-            <img src="pics/shows/the-park-cover.jpg" alt="The Park Hotel"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-            <div class="live-img-fallback">THE PARK<br>HOTEL</div>
-          </div>
-          <div class="live-body">
-            <div class="live-outlet">Show</div>
-            <div class="live-title">The Park Hotel</div>
-            <div class="live-meta">Chennai</div>
-            <span class="live-arrow">→</span>
-          </div>
-        </div>
-
       </div>
       <div class="live-dots" id="liveDots"></div>
     </div>
-
   </div>
 </section>
 
