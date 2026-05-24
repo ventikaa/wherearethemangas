@@ -6,6 +6,7 @@ const includes = [
   { id: 'include-discography', file: 'sections/discography.html' },
   { id: 'include-break',       file: 'sections/break.html' },
   { id: 'include-live',        file: 'sections/live.html' },
+  { id: 'include-fresh-finds', file: 'sections/fresh-finds.html' },
   { id: 'include-press',       file: 'sections/press.html' },
   { id: 'include-photo-strip', file: 'sections/photo-strip.html' },
   { id: 'include-footer',      file: 'sections/footer.html' },
