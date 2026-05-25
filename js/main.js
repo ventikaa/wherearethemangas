@@ -3,6 +3,7 @@ const includes = [
   { id: 'include-hero',        file: 'sections/hero.html' },
   { id: 'include-new-release', file: 'sections/new-release.html' },
   { id: 'include-bio',         file: 'sections/bio.html' },
+  { id: 'include-quick-links', file: 'sections/quick-links.html' },
   { id: 'include-discography', file: 'sections/discography.html' },
   { id: 'include-break',       file: 'sections/break.html' },
   { id: 'include-live',        file: 'sections/live.html' },
