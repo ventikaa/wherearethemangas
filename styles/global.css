@@ -115,7 +115,7 @@ body::after {
   transform: translateY(-4px);
 }
 .ql-icon {
-  width: 72px; height: 72px;
+  width: 72px; height: 100px;
   color: var(--red);
   opacity: .7;
   transition: opacity .2s;
