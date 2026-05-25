@@ -155,7 +155,7 @@
   font-family: var(--font-s);
   font-size: 9px;
   letter-spacing: .3em;
-  color: var(--fg-off);
+  color: var(--fg-dim);
   text-transform: uppercase;
   text-align: center;
   padding: 14px 16px;
