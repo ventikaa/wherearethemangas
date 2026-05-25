@@ -195,7 +195,11 @@ async function loadIncludes() {
   initReveal();
   initCarousel();
   initLiveShows();
-  initLiveCarousel();
+
+  // duplicate cards for infinite scroll
+  document.querySelectorAll('.live-scroll-track').forEach(track => {
+    track.innerHTML += track.innerHTML;
+  });
 }
 
 function initReveal() {
@@ -243,38 +247,61 @@ function initCarousel() {
   nextBtn.addEventListener('click', () => goTo(current + 1));
 }
 
-function initLiveCarousel() {
-  const liveTrack  = document.getElementById('liveTrack');
-  const livePrev   = document.querySelector('.live-prev');
-  const liveNext   = document.querySelector('.live-next');
-  const liveDotsEl = document.getElementById('liveDots');
-  if (!liveTrack || !livePrev || !liveNext) return;
+window.openFestivalGallery = function(key) {
+  const data = festivalData[key];
+  if (!data) return;
 
-  const liveCards = liveTrack.querySelectorAll('.live-card');
-  const perPage   = window.innerWidth <= 768 ? 1 : 3;
-  const total     = Math.ceil(liveCards.length / perPage);
-  let page        = 0;
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = lightbox.querySelector('.lightbox-img');
 
-  for (let i = 0; i < total; i++) {
-    const dot = document.createElement('button');
-    dot.classList.add('live-dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToPage(i));
-    liveDotsEl.appendChild(dot);
+  let currentIndex = 0;
+  const photos = data.photos;
+
+  function show(index) {
+    currentIndex = (index + photos.length) % photos.length;
+    lbImg.src = photos[currentIndex];
   }
 
-  function goToPage(p) {
-    page = p;
-    const cardWidth = liveCards[0].offsetWidth + 20;
-    liveTrack.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
-    liveDotsEl.querySelectorAll('.live-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === page);
-    });
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', keyHandler);
+    lightbox.removeEventListener('click', backdropHandler);
   }
 
-  livePrev.addEventListener('click', () => goToPage(Math.max(0, page - 1)));
-  liveNext.addEventListener('click', () => goToPage(Math.min(total - 1, page + 1)));
-}
+  function keyHandler(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  show(currentIndex - 1);
+    if (e.key === 'ArrowRight') show(currentIndex + 1);
+  }
+
+  function backdropHandler(e) {
+    if (e.target === lightbox) closeLightbox();
+  }
+
+  show(0);
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  const freshClose = lightbox.querySelector('.lightbox-close');
+  const freshPrev  = lightbox.querySelector('.lightbox-prev');
+  const freshNext  = lightbox.querySelector('.lightbox-next');
+
+  // remove old listeners by cloning
+  const newClose = freshClose.cloneNode(true);
+  const newPrev  = freshPrev.cloneNode(true);
+  const newNext  = freshNext.cloneNode(true);
+  freshClose.replaceWith(newClose);
+  freshPrev.replaceWith(newPrev);
+  freshNext.replaceWith(newNext);
+
+  newClose.addEventListener('click', closeLightbox);
+  newPrev.addEventListener('click',  () => show(currentIndex - 1));
+  newNext.addEventListener('click',  () => show(currentIndex + 1));
+  document.addEventListener('keydown', keyHandler);
+  lightbox.addEventListener('click', backdropHandler);
+};
 
 function initLiveShows() {
   const modal      = document.getElementById('showModal');
@@ -326,10 +353,8 @@ function initLiveShows() {
   document.querySelectorAll('.festival-gallery-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const key  = btn.dataset.festival;
-      const data = festivalData[key];
-      if (!data) return;
-      openModal(data.title, data.photos);
+      const key = btn.dataset.festival;
+      window.openFestivalGallery(key);
     });
   });
 
