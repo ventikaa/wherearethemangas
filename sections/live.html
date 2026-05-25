@@ -1,48 +1,79 @@
 <section id="live">
   <div class="live-inner">
 
-<!-- ── FESTIVALS & TOURS ── -->
-<div class="section-label reveal">Festivals &amp; Tours</div>
-<h2 class="about-heading reveal" style="margin-bottom:48px">FESTIVALS &amp; TOURS</h2>
+    <!-- ── FESTIVALS ── -->
+    <div class="section-label reveal">Festivals</div>
+    <h2 class="about-heading reveal" style="margin-bottom:48px">FESTIVALS</h2>
 
-<div class="festival-grid">
+    <div class="festival-grid">
 
-  <div class="festival-tile reveal" data-festival="circle-of-love-2023">
-    <div class="festival-tile-img">
-      <img src="pics/festivals/circle-of-love-2023-2.jpg" alt="Circle of Love 2023"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-    </div>
-    <div class="festival-tile-body">
-      <div class="festival-tile-label">Festival</div>
-      <div class="festival-tile-title">Circle of Love</div>
-      <div class="festival-tile-meta">Chennai · 2023</div>
-      <button class="festival-gallery-btn" data-festival="circle-of-love-2023">+ View Gallery</button>
-    </div>
-  </div>
+      <div class="festival-tile reveal" data-festival="circle-of-love-2023">
+        <div class="festival-tile-img" onclick="openFestivalGallery('circle-of-love-2023')">
+          <img src="pics/festivals/circle-of-love-2023-2.jpg" alt="Circle of Love 2023"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">CIRCLE OF LOVE</div>
+        </div>
+        <div class="festival-tile-body">
+          <div class="festival-tile-label">Festival</div>
+          <div class="festival-tile-title">Circle of Love</div>
+          <div class="festival-tile-meta">Chennai · 2023</div>
+          <button class="festival-gallery-btn" data-festival="circle-of-love-2023">+ View Gallery</button>
+        </div>
+      </div>
 
-  <div class="festival-tile reveal" data-festival="covelong-2023" style="transition-delay:.1s">
-    <div class="festival-tile-img">
-      <img src="pics/festivals/covelong-2023-3.jpg" alt="Surf Turf Covelong 2023"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-    </div>
-    <div class="festival-tile-body">
-      <div class="festival-tile-label">Festival</div>
-      <div class="festival-tile-title">Surf Turf Covelong</div>
-      <div class="festival-tile-meta">Chennai · 2023</div>
-      <button class="festival-gallery-btn" data-festival="covelong-2023">+ View Gallery</button>
-    </div>
-  </div>
-</div>
+      <div class="festival-tile reveal" data-festival="covelong-2023" style="transition-delay:.1s">
+        <div class="festival-tile-img" onclick="openFestivalGallery('covelong-2023')">
+          <img src="pics/festivals/covelong-2023-3.jpg" alt="Surf Turf Covelong 2023"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">SURF TURF COVELONG</div>
+        </div>
+        <div class="festival-tile-body">
+          <div class="festival-tile-label">Festival</div>
+          <div class="festival-tile-title">Surf Turf Covelong</div>
+          <div class="festival-tile-meta">Chennai · 2023</div>
+          <button class="festival-gallery-btn" data-festival="covelong-2023">+ View Gallery</button>
+        </div>
+      </div>
 
-<!-- ── LIVE SHOWS ── -->
+      <div class="festival-tile reveal" data-festival="ric-chennai" style="transition-delay:.2s">
+        <div class="festival-tile-img" onclick="openFestivalGallery('ric-chennai')">
+          <img src="pics/festivals/ric-chennai-poster.jpg" alt="Running in Circles Chennai"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">RUNNING IN CIRCLES</div>
+        </div>
+        <div class="festival-tile-body">
+          <div class="festival-tile-label">Tour</div>
+          <div class="festival-tile-title">Running in Circles Tour</div>
+          <div class="festival-tile-meta">Chennai · 2025</div>
+          <button class="festival-gallery-btn" data-festival="ric-chennai">+ View Gallery</button>
+        </div>
+      </div>
+
+      <div class="festival-tile reveal" data-festival="ric-bangalore" style="transition-delay:.3s">
+        <div class="festival-tile-img" onclick="openFestivalGallery('ric-bangalore')">
+          <img src="pics/festivals/ric-bangalore-poster.jpg" alt="Running in Circles Bangalore"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">RUNNING IN CIRCLES</div>
+        </div>
+        <div class="festival-tile-body">
+          <div class="festival-tile-label">Tour</div>
+          <div class="festival-tile-title">Running in Circles Tour</div>
+          <div class="festival-tile-meta">Bangalore · 2025</div>
+          <button class="festival-gallery-btn" data-festival="ric-bangalore">+ View Gallery</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── LIVE SHOWS ── -->
     <div class="section-label reveal" style="margin-top:clamp(80px,12vh,140px)">On Stage</div>
     <h2 class="about-heading reveal" style="margin-bottom:48px">LIVE SHOWS</h2>
 
-    <div class="live-carousel-wrap">
-      <button class="live-prev">&#8592;</button>
-      <button class="live-next">&#8594;</button>
-      <div class="live-track-outer">
-        <div class="live-track" id="liveTrack">
+    <div class="live-scroll-wrap">
+
+      <!-- row 1: left to right -->
+      <div class="live-scroll-row" id="liveRow1">
+        <div class="live-scroll-track">
 
           <div class="live-card" data-show="summer-bang">
             <div class="live-img-wrap">
@@ -156,6 +187,13 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- row 2: right to left -->
+      <div class="live-scroll-row reverse" id="liveRow2">
+        <div class="live-scroll-track">
+
           <div class="live-card" data-show="circle-of-love-nye">
             <div class="live-img-wrap">
               <img src="pics/shows/circle-of-love-nye-cover.jpg" alt="Circle of Love NYE"
@@ -212,10 +250,53 @@
             </div>
           </div>
 
+          <div class="live-card" data-show="bangalore-bychance">
+            <div class="live-img-wrap">
+              <img src="pics/shows/bangalore-bychance-cover.jpg" alt="Bangalore Bychance"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">BANGALORE<br>BYCHANCE</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Bangalore Bychance</div>
+              <div class="live-meta">Bangalore</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="fandom">
+            <div class="live-img-wrap">
+              <img src="pics/shows/fandom-cover.jpg" alt="Fandom"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">FANDOM</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Show</div>
+              <div class="live-title">Fandom</div>
+              <div class="live-meta">Chennai</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="festember">
+            <div class="live-img-wrap">
+              <img src="pics/shows/festember-cover.jpg" alt="NIT Trichy Festember"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">NIT TRICHY<br>FESTEMBER</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Festival</div>
+              <div class="live-title">NIT Trichy Festember</div>
+              <div class="live-meta">Trichy</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="live-dots" id="liveDots"></div>
+
     </div>
+
   </div>
 </section>
 
