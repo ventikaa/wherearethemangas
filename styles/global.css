@@ -78,7 +78,7 @@ body::after {
 /* ── QUICK LINKS ── */
 #quick-links {
   padding: clamp(80px,12vh,140px) clamp(18px,5vw,56px);
-  background: var(--bg3);
+  background: var(--black, #000);
   border-top: 1px solid rgba(191,28,18,.15);
 }
 .ql-inner {
@@ -88,7 +88,8 @@ body::after {
 .ql-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
+  gap: clamp(24px,4vw,60px);
+  align-items: start;
 }
 @media(max-width:720px) {
   .ql-grid { grid-template-columns: 1fr 1fr; }
@@ -96,66 +97,36 @@ body::after {
 @media(max-width:400px) {
   .ql-grid { grid-template-columns: 1fr; }
 }
-.ql-card {
+
+.ql-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 48px 24px;
-  background: var(--bg2);
-  border: 1px solid transparent;
+  gap: 20px;
   text-decoration: none;
-  position: relative;
-  transition: border-color .2s, background .2s, transform .2s;
+  transition: transform .2s, opacity .2s;
 }
-.ql-card:hover {
-  border-color: rgba(191,28,18,.35);
-  background: var(--bg);
-  transform: translateY(-4px);
+.ql-item:hover {
+  transform: translateY(-6px);
+  opacity: .8;
 }
-.ql-icon {
-  width: 72px; height: 100px;
-  color: var(--red);
-  opacity: .7;
-  transition: opacity .2s;
+
+.ql-icon-img {
+  width: clamp(80px,10vw,120px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
-.ql-card:hover .ql-icon { opacity: 1; }
-.ql-icon svg {
-  width: 100%; height: 100%;
-}
+
 .ql-label {
-  font-family: var(--font-d);
-  font-size: clamp(14px,1.8vw,20px);
-  letter-spacing: .25em;
+  font-family: var(--font-s);
+  font-size: 11px;
+  letter-spacing: .35em;
   color: var(--fg);
   text-transform: uppercase;
   text-align: center;
+  line-height: 1.5;
 }
-.ql-arrow {
-  font-size: 18px;
-  color: var(--red);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .2s, transform .2s;
-}
-.ql-card:hover .ql-arrow {
-  opacity: 1;
-  transform: translateY(0);
-}
-.ql-icons-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-}
-.ql-icons-row svg {
-  width: 100px; height: 100px;
-  color: var(--red);
-  opacity: .7;
-  transition: opacity .2s;
-}
-.ql-card:hover .ql-icons-row svg { opacity: 1; }
 /* ── SCROLL REVEAL ──────────────────────────────────────── */
 .reveal {
   opacity: 0;
