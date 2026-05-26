@@ -11,6 +11,7 @@
         <div class="festival-tile-img" onclick="openFestivalGallery('circle-of-love-2023')">
           <img src="pics/festivals/circle-of-love-2023-2.jpg" alt="Circle of Love 2023"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">CIRCLE OF LOVE</div>
         </div>
         <div class="festival-tile-body">
           <div class="festival-tile-label">Festival</div>
@@ -24,6 +25,7 @@
         <div class="festival-tile-img" onclick="openFestivalGallery('covelong-2023')">
           <img src="pics/festivals/covelong-2023-3.jpg" alt="Surf Turf Covelong 2023"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+          <div class="festival-tile-fallback">SURF TURF COVELONG</div>
         </div>
         <div class="festival-tile-body">
           <div class="festival-tile-label">Festival</div>
@@ -41,7 +43,7 @@
 
     <div class="live-scroll-wrap">
 
-      <!-- row 1: left to right -->
+      <!-- row 1: left to right — shows 1-9 -->
       <div class="live-scroll-row" id="liveRow1">
         <div class="live-scroll-track">
 
@@ -49,6 +51,7 @@
             <div class="live-img-wrap">
               <img src="pics/houseparty1.jpeg" alt="Summer Bang House Party"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">SUMMER BANG<br>HOUSE PARTY</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">House Party</div>
@@ -62,6 +65,7 @@
             <div class="live-img-wrap">
               <img src="pics/devoid/au3.jpg" alt="Turn Up for Devoid"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">TURN UP<br>FOR DEVOID</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
@@ -75,6 +79,7 @@
             <div class="live-img-wrap">
               <img src="pics/roc/roc2.jpg" alt="Running in Circles Tour"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">RUNNING IN<br>CIRCLES TOUR</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Tour</div>
@@ -86,13 +91,14 @@
 
           <div class="live-card" data-show="black-orchid">
             <div class="live-img-wrap">
-              <img src="pics/blackorchid/bo2.jpg" alt="Running in Circles Tour"
+              <img src="pics/blackorchid/bo2.jpg" alt="Black Orchid"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">BLACK<br>ORCHID</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
               <div class="live-title">Black Orchid</div>
-              <div class="live-meta">2025</div>
+              <div class="live-meta">Chennai</div>
               <span class="live-arrow">→</span>
             </div>
           </div>
@@ -101,6 +107,7 @@
             <div class="live-img-wrap">
               <img src="pics/shows/bangalore-bychance-cover.jpg" alt="Bangalore Bychance"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">BANGALORE<br>BYCHANCE</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
@@ -114,6 +121,7 @@
             <div class="live-img-wrap">
               <img src="pics/fandom/fandom2.jpg" alt="Fandom"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">FANDOM</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
@@ -127,6 +135,7 @@
             <div class="live-img-wrap">
               <img src="pics/iitm/iitm1.jpg" alt="IIT Madras"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">IIT<br>MADRAS</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
@@ -154,6 +163,7 @@
             <div class="live-img-wrap">
               <img src="pics/festember/fest2.jpg" alt="NIT Trichy Festember"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">NIT TRICHY<br>FESTEMBER</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Festival</div>
@@ -166,7 +176,7 @@
         </div>
       </div>
 
-      <!-- row 2: right to left -->
+      <!-- row 2: right to left — shows 10-15 -->
       <div class="live-scroll-row reverse" id="liveRow2">
         <div class="live-scroll-track">
 
@@ -174,6 +184,7 @@
             <div class="live-img-wrap">
               <img src="pics/nycol/nycol1.jpg" alt="Circle of Love NYE"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">CIRCLE OF LOVE<br>NYE</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Festival</div>
@@ -187,6 +198,7 @@
             <div class="live-img-wrap">
               <img src="pics/phoenix/ph4.jpg" alt="Phoenix Market City"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">PHOENIX<br>MARKET CITY</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Show</div>
@@ -224,44 +236,30 @@
             </div>
           </div>
 
-          <div class="live-card" data-show="bangalore-bychance">
+          <div class="live-card" data-show="circle-of-love-nye">
             <div class="live-img-wrap">
-              <img src="pics/shows/bangalore-bychance-cover.jpg" alt="Bangalore Bychance"
+              <img src="pics/nycol/nycol2.jpg" alt="Circle of Love NYE 2"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-              <div class="live-img-fallback">BANGALORE<br>BYCHANCE</div>
-            </div>
-            <div class="live-body">
-              <div class="live-outlet">Show</div>
-              <div class="live-title">Bangalore Bychance</div>
-              <div class="live-meta">Bangalore</div>
-              <span class="live-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="live-card" data-show="fandom">
-            <div class="live-img-wrap">
-              <img src="pics/shows/fandom-cover.jpg" alt="Fandom"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-              <div class="live-img-fallback">FANDOM</div>
-            </div>
-            <div class="live-body">
-              <div class="live-outlet">Show</div>
-              <div class="live-title">Fandom</div>
-              <div class="live-meta">Chennai</div>
-              <span class="live-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="live-card" data-show="festember">
-            <div class="live-img-wrap">
-              <img src="pics/shows/festember-cover.jpg" alt="NIT Trichy Festember"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-              <div class="live-img-fallback">NIT TRICHY<br>FESTEMBER</div>
+              <div class="live-img-fallback">CIRCLE OF LOVE<br>NYE</div>
             </div>
             <div class="live-body">
               <div class="live-outlet">Festival</div>
-              <div class="live-title">NIT Trichy Festember</div>
-              <div class="live-meta">Trichy</div>
+              <div class="live-title">Circle of Love NYE</div>
+              <div class="live-meta">2025 – 2026</div>
+              <span class="live-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="live-card" data-show="running-in-circles">
+            <div class="live-img-wrap">
+              <img src="pics/roc/roc4.jpg" alt="Running in Circles"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="live-img-fallback">RUNNING IN<br>CIRCLES</div>
+            </div>
+            <div class="live-body">
+              <div class="live-outlet">Tour</div>
+              <div class="live-title">Running in Circles Tour</div>
+              <div class="live-meta">2025</div>
               <span class="live-arrow">→</span>
             </div>
           </div>
