@@ -304,49 +304,60 @@ window.openFestivalGallery = function(key) {
 };
 
 function initLiveShows() {
-  const modal      = document.getElementById('showModal');
-  if (!modal) return;
-
-  const modalTitle = modal.querySelector('.show-modal-title');
-  const modalGrid  = modal.querySelector('.show-modal-grid');
-  const closeBtn   = modal.querySelector('.show-modal-close');
-
-  const lightbox   = document.getElementById('lightbox');
-  const lbImg      = lightbox.querySelector('.lightbox-img');
-  const lbClose    = lightbox.querySelector('.lightbox-close');
-  const lbPrev     = lightbox.querySelector('.lightbox-prev');
-  const lbNext     = lightbox.querySelector('.lightbox-next');
-
-  let currentPhotos = [];
-  let currentIndex  = 0;
-
-  function openModal(title, photos) {
-    modalTitle.textContent = title;
-    modalGrid.innerHTML = '';
-    photos.forEach((src, i) => {
-      const div = document.createElement('div');
-      div.classList.add('grid-photo');
-      const img = document.createElement('img');
-      img.alt = `${title} — ${i + 1}`;
-      img.src = src;
-      img.onerror = () => {
-        div.classList.add('placeholder');
-        div.innerHTML = '<span>Photo Coming Soon</span>';
-      };
-      img.addEventListener('click', () => openLightbox(photos, i));
-      div.appendChild(img);
-      modalGrid.appendChild(div);
-    });
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = lightbox.querySelector('.lightbox-img');
+  const lbClose  = lightbox.querySelector('.lightbox-close');
+  const lbPrev   = lightbox.querySelector('.lightbox-prev');
+  const lbNext   = lightbox.querySelector('.lightbox-next');
 
   document.querySelectorAll('.live-card').forEach(card => {
     card.addEventListener('click', () => {
       const key  = card.dataset.show;
       const data = showData[key];
       if (!data) return;
-      openModal(data.title, data.photos);
+
+      let currentIndex = 0;
+      const photos = data.photos;
+
+      function show(index) {
+        currentIndex = (index + photos.length) % photos.length;
+        lbImg.src = photos[currentIndex];
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', keyHandler);
+        lightbox.removeEventListener('click', backdropHandler);
+      }
+
+      function keyHandler(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape')     closeLightbox();
+        if (e.key === 'ArrowLeft')  show(currentIndex - 1);
+        if (e.key === 'ArrowRight') show(currentIndex + 1);
+      }
+
+      function backdropHandler(e) {
+        if (e.target === lightbox) closeLightbox();
+      }
+
+      const newClose = lbClose.cloneNode(true);
+      const newPrev  = lbPrev.cloneNode(true);
+      const newNext  = lbNext.cloneNode(true);
+      lbClose.replaceWith(newClose);
+      lbPrev.replaceWith(newPrev);
+      lbNext.replaceWith(newNext);
+
+      newClose.addEventListener('click', closeLightbox);
+      newPrev.addEventListener('click',  () => show(currentIndex - 1));
+      newNext.addEventListener('click',  () => show(currentIndex + 1));
+      document.addEventListener('keydown', keyHandler);
+      lightbox.addEventListener('click', backdropHandler);
+
+      show(0);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
   });
 
@@ -356,50 +367,6 @@ function initLiveShows() {
       const key = btn.dataset.festival;
       window.openFestivalGallery(key);
     });
-  });
-
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function openLightbox(photos, index) {
-    currentPhotos = photos;
-    currentIndex  = index;
-    lbImg.src     = photos[index];
-    lightbox.classList.add('active');
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-  }
-
-  function prev() {
-    currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
-    lbImg.src = currentPhotos[currentIndex];
-  }
-
-  function next() {
-    currentIndex = (currentIndex + 1) % currentPhotos.length;
-    lbImg.src = currentPhotos[currentIndex];
-  }
-
-  lbClose.addEventListener('click', closeLightbox);
-  lbPrev.addEventListener('click', prev);
-  lbNext.addEventListener('click', next);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
-  document.addEventListener('keydown', e => {
-    if (lightbox.classList.contains('active')) {
-      if (e.key === 'Escape')     closeLightbox();
-      if (e.key === 'ArrowLeft')  prev();
-      if (e.key === 'ArrowRight') next();
-    } else if (modal.classList.contains('active')) {
-      if (e.key === 'Escape') closeModal();
-    }
   });
 }
 
