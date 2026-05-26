@@ -37,11 +37,11 @@ const showData = {
   'running-in-circles': {
     title: 'Running in Circles Tour',
     photos: [
-      'pics/shows/running-in-circles-1.jpg',
-      'pics/shows/running-in-circles-2.jpg',
-      'pics/shows/running-in-circles-3.jpg',
-      'pics/shows/running-in-circles-4.jpg',
-      'pics/shows/running-in-circles-5.jpg',
+      'pics/roc/roc1.jpg',
+      'pics/roc/roc2.jpg',
+      'pics/roc/roc3.jpg',
+      'pics/roc/roc4.jpg',
+      'pics/roc/roc5.jpg',
     ]
   },
   'bangalore-bychance': {
@@ -95,11 +95,9 @@ const showData = {
   'circle-of-love-nye': {
     title: 'Circle of Love NYE',
     photos: [
-      'pics/shows/circle-of-love-nye-1.jpg',
-      'pics/shows/circle-of-love-nye-2.jpg',
-      'pics/shows/circle-of-love-nye-3.jpg',
-      'pics/shows/circle-of-love-nye-4.jpg',
-      'pics/shows/circle-of-love-nye-5.jpg',
+      'pics/nycol/nycol1.jpg',
+      'pics/nycol/nycol2.jpg',
+      'pics/nycol/nycol3.jpg',
     ]
   },
   'phoenix': {
