@@ -27,11 +27,11 @@ const showData = {
   'turn-up-devoid': {
     title: 'Turn Up for Devoid',
     photos: [
-      'pics/shows/turn-up-devoid-1.jpg',
-      'pics/shows/turn-up-devoid-2.jpg',
-      'pics/shows/turn-up-devoid-3.jpg',
-      'pics/shows/turn-up-devoid-4.jpg',
-      'pics/shows/turn-up-devoid-5.jpg',
+      'pics/devoid/au1.jpg',
+      'pics/devoid/au2.jpg',
+      'pics/devoid/au3.jpg',
+      'pics/devoid/au4.jpg',
+      'pics/devoid/au5.jpg',
     ]
   },
   'running-in-circles': {
@@ -57,39 +57,39 @@ const showData = {
   'fandom': {
     title: 'Fandom',
     photos: [
-     'pics/fandom/fandom1.jpg',
-    'pics/fandom/fandom2.jpg',
-    'pics/fandom/fandom3.jpg',
+      'pics/fandom/fandom1.jpg',
+      'pics/fandom/fandom2.jpg',
+      'pics/fandom/fandom3.jpg',
     ]
   },
   'iit-madras': {
     title: 'IIT Madras',
     photos: [
-    'pics/iitm/iitm1.jpg',
-    'pics/iitm/iitm2.jpg',
-    'pics/iitm/iitm3.jpg',
-    'pics/iitm/iitm4.jpg',
-    'pics/iitm/iitm5.jpg',
+      'pics/iitm/iitm1.jpg',
+      'pics/iitm/iitm2.jpg',
+      'pics/iitm/iitm3.jpg',
+      'pics/iitm/iitm4.jpg',
+      'pics/iitm/iitm5.jpg',
     ]
   },
   'octavia': {
     title: 'Octavia — MCC',
     photos: [
-      'pics/shows/octavia-1.jpg',
-      'pics/shows/octavia-2.jpg',
-      'pics/shows/octavia-3.jpg',
-      'pics/shows/octavia-4.jpg',
-      'pics/shows/octavia-5.jpg',
+      'pics/octavia/oct1.jpg',
+      'pics/octavia/oct2.jpg',
+      'pics/octavia/oct3.jpg',
+      'pics/octavia/oct4.jpg',
+      'pics/octavia/oct5.jpg',
     ]
   },
   'festember': {
     title: 'NIT Trichy Festember',
     photos: [
-      'pics/shows/festember-1.jpg',
-      'pics/shows/festember-2.jpg',
-      'pics/shows/festember-3.jpg',
-      'pics/shows/festember-4.jpg',
-      'pics/shows/festember-5.jpg',
+      'pics/festember/fest1.jpg',
+      'pics/festember/fest2.jpg',
+      'pics/festember/fest3.jpg',
+      'pics/festember/fest4.jpg',
+      'pics/festemver/fest5.jpg',
     ]
   },
   'circle-of-love-nye': {
@@ -103,11 +103,11 @@ const showData = {
   'phoenix': {
     title: 'Phoenix Market City',
     photos: [
-      'pics/shows/phoenix-1.jpg',
-      'pics/shows/phoenix-2.jpg',
-      'pics/shows/phoenix-3.jpg',
-      'pics/shows/phoenix-4.jpg',
-      'pics/shows/phoenix-5.jpg',
+      'pics/phoenix/ph1.jpg',
+      'pics/phoenix/ph2.jpg',
+      'pics/phoenix/ph3.jpg',
+      'pics/phoenix/ph4.jpg',
+      'pics/phoenix/ph5.jpg',
     ]
   },
   'summer-bang-3': {
@@ -120,6 +120,18 @@ const showData = {
       'pics/shows/summer-bang-3-5.jpg',
     ]
   },
+
+  'black-orchid': {
+  title: 'Black Orchid',
+  photos: [
+    'pics/blackorchid/bo1.jpg',
+    'pics/blackorchid/bo2.JPG',
+    'pics/blackorchid/bo3.JPG',
+    'pics/blackorchid/bo4.jpg',
+    'pics/blackorchid/bo5.jpg',
+  ]
+},
+  
   'the-park': {
     title: 'The Park Hotel',
     photos: [
@@ -302,9 +314,6 @@ window.openFestivalGallery = function(key) {
 function initLiveShows() {
   const lightbox = document.getElementById('lightbox');
   const lbImg    = lightbox.querySelector('.lightbox-img');
-  const lbClose  = lightbox.querySelector('.lightbox-close');
-  const lbPrev   = lightbox.querySelector('.lightbox-prev');
-  const lbNext   = lightbox.querySelector('.lightbox-next');
 
   document.querySelectorAll('.live-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -338,12 +347,17 @@ function initLiveShows() {
         if (e.target === lightbox) closeLightbox();
       }
 
-      const newClose = lbClose.cloneNode(true);
-      const newPrev  = lbPrev.cloneNode(true);
-      const newNext  = lbNext.cloneNode(true);
-      lbClose.replaceWith(newClose);
-      lbPrev.replaceWith(newPrev);
-      lbNext.replaceWith(newNext);
+      // re-query fresh every time to avoid stale references
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const prevBtn  = lightbox.querySelector('.lightbox-prev');
+      const nextBtn  = lightbox.querySelector('.lightbox-next');
+
+      const newClose = closeBtn.cloneNode(true);
+      const newPrev  = prevBtn.cloneNode(true);
+      const newNext  = nextBtn.cloneNode(true);
+      closeBtn.replaceWith(newClose);
+      prevBtn.replaceWith(newPrev);
+      nextBtn.replaceWith(newNext);
 
       newClose.addEventListener('click', closeLightbox);
       newPrev.addEventListener('click',  () => show(currentIndex - 1));
