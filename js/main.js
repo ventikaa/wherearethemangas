@@ -57,21 +57,19 @@ const showData = {
   'fandom': {
     title: 'Fandom',
     photos: [
-      'pics/shows/fandom-1.jpg',
-      'pics/shows/fandom-2.jpg',
-      'pics/shows/fandom-3.jpg',
-      'pics/shows/fandom-4.jpg',
-      'pics/shows/fandom-5.jpg',
+     'pics/fandom/fandom1.jpg',
+    'pics/fandom/fandom2.jpg',
+    'pics/fandom/fandom3.jpg',
     ]
   },
   'iit-madras': {
     title: 'IIT Madras',
     photos: [
-      'pics/shows/iit-madras-1.jpg',
-      'pics/shows/iit-madras-2.jpg',
-      'pics/shows/iit-madras-3.jpg',
-      'pics/shows/iit-madras-4.jpg',
-      'pics/shows/iit-madras-5.jpg',
+    'pics/iitm/iitm1.jpg',
+    'pics/iitm/iitm2.jpg',
+    'pics/iitm/iitm3.jpg',
+    'pics/iitm/iitm4.jpg',
+    'pics/iitm/iitm5.jpg',
     ]
   },
   'octavia': {
