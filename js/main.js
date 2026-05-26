@@ -194,12 +194,13 @@ async function loadIncludes() {
   }
   initReveal();
   initCarousel();
-  initLiveShows();
 
-  // duplicate cards for infinite scroll
+  // duplicate cards for infinite scroll BEFORE attaching listeners
   document.querySelectorAll('.live-scroll-track').forEach(track => {
     track.innerHTML += track.innerHTML;
   });
+
+  initLiveShows();
 }
 
 function initReveal() {
@@ -288,7 +289,6 @@ window.openFestivalGallery = function(key) {
   const freshPrev  = lightbox.querySelector('.lightbox-prev');
   const freshNext  = lightbox.querySelector('.lightbox-next');
 
-  // remove old listeners by cloning
   const newClose = freshClose.cloneNode(true);
   const newPrev  = freshPrev.cloneNode(true);
   const newNext  = freshNext.cloneNode(true);
