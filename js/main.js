@@ -380,4 +380,16 @@ function initLiveShows() {
   });
 }
 
+document.addEventListener('click', (e) => {
+  const toggle   = document.getElementById('logoToggle');
+  const dropdown = document.getElementById('logoDropdown');
+  if (!toggle || !dropdown) return;
+  if (toggle.contains(e.target)) {
+    e.preventDefault();
+    dropdown.classList.toggle('open');
+  } else {
+    dropdown.classList.remove('open');
+  }
+});
+
 loadIncludes();
