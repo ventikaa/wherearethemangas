@@ -1,10 +1,15 @@
-<nav>
-  <a href="#home" class="nav-logo-img">
-    <img src="pics/mangas-logo.png" alt="MANGAS" height="32"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/>
-    <span class="nav-logo-text" style="display:none">M<span>A</span>NGAS</span>
-  </a>
-  <ul class="nav-links">
+
+<nav class="navbar" id="navbar">
+  <div class="nav-logo-wrap">
+    <a class="nav-logo" href="#home" id="logoToggle">
+      <img src="pics/mangas-logo.png" alt="MANGAS"/>
+    </a>
+    <div class="nav-logo-dropdown" id="logoDropdown">
+      <a href="#" target="_blank">Producer Site</a>
+      <a href="drums/" target="_blank">Drummer Site</a>
+    </div>
+  </div>
+  <div class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#new-release">New Release</a></li>
     <li><a href="#about">About</a></li>
@@ -13,5 +18,5 @@
     <li><a href="#live">Shows</a></li>
     <li><a href="#press">Press</a></li>
 
-  </ul>
+  </div>
 </nav>
