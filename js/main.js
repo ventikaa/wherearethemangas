@@ -198,6 +198,7 @@ async function loadIncludes() {
       console.warn(err.message);
     }
   }
+
   initReveal();
   initCarousel();
 
@@ -206,6 +207,21 @@ async function loadIncludes() {
   });
 
   initLiveShows();
+
+  // init logo dropdown HERE — after navbar is injected into DOM
+  const toggle   = document.getElementById('logoToggle');
+  const dropdown = document.getElementById('logoDropdown');
+  if (toggle && dropdown) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && e.target !== toggle) {
+        dropdown.classList.remove('open');
+      }
+    });
+  }
 }
 
 function initReveal() {
@@ -377,15 +393,3 @@ function initLiveShows() {
 }
 
 loadIncludes();
-
-document.addEventListener('click', (e) => {
-  const toggle   = document.getElementById('logoToggle');
-  const dropdown = document.getElementById('logoDropdown');
-  if (!toggle || !dropdown) return;
-
-  if (toggle === e.target) {
-    dropdown.classList.toggle('open');
-  } else {
-    dropdown.classList.remove('open');
-  }
-});
