@@ -131,8 +131,8 @@
   height: 28px;
 }
 .hero-social-link img {
-  width: 28px;
-  height: 28px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
 }
 .hero-social-link:hover {
