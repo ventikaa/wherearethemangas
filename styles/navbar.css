@@ -21,6 +21,13 @@ nav {
   display: block;
   object-fit: contain;
 }
+
+.nav-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 .nav-logo-text {
   font-family: var(--font-d);
   font-size: 22px;
