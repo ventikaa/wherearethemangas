@@ -48,5 +48,41 @@ nav {
   background: var(--red);
   transition: width .2s;
 }
+
+.nav-logo-wrap {
+  position: relative;
+}
+
+.nav-logo-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  background: var(--bg2);
+  border: 1px solid rgba(191,28,18,.25);
+  min-width: 160px;
+  z-index: 200;
+  flex-direction: column;
+}
+.nav-logo-dropdown.open {
+  display: flex;
+}
+.nav-logo-dropdown a {
+  font-family: var(--font-s);
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  padding: 14px 18px;
+  transition: background .15s, color .15s;
+  border-bottom: 1px solid rgba(191,28,18,.1);
+}
+.nav-logo-dropdown a:last-child {
+  border-bottom: none;
+}
+.nav-logo-dropdown a:hover {
+  background: var(--bg3);
+  color: var(--red);
+}
 .nav-links a:hover { color: var(--fg); }
 .nav-links a:hover::after { width: 100%; }
