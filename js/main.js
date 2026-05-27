@@ -89,7 +89,7 @@ const showData = {
       'pics/festember/fest2.jpg',
       'pics/festember/fest3.jpg',
       'pics/festember/fest4.jpg',
-      'pics/festemver/fest5.jpg',
+      'pics/festember/fest5.jpg',
     ]
   },
   'circle-of-love-nye': {
@@ -120,18 +120,16 @@ const showData = {
       'pics/shows/summer-bang-3-5.jpg',
     ]
   },
-
   'black-orchid': {
-  title: 'Black Orchid',
-  photos: [
-    'pics/blackorchid/bo1.jpg',
-    'pics/blackorchid/bo2.JPG',
-    'pics/blackorchid/bo3.JPG',
-    'pics/blackorchid/bo4.jpg',
-    'pics/blackorchid/bo5.jpg',
-  ]
-},
-  
+    title: 'Black Orchid',
+    photos: [
+      'pics/blackorchid/bo1.jpg',
+      'pics/blackorchid/bo2.JPG',
+      'pics/blackorchid/bo3.JPG',
+      'pics/blackorchid/bo4.jpg',
+      'pics/blackorchid/bo5.jpg',
+    ]
+  },
   'the-park': {
     title: 'The Park Hotel',
     photos: [
@@ -209,6 +207,7 @@ async function loadIncludes() {
   });
 
   initLiveShows();
+  initLogoDropdown();
 }
 
 function initReveal() {
@@ -254,6 +253,23 @@ function initCarousel() {
   }
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
+}
+
+function initLogoDropdown() {
+  const toggle   = document.getElementById('logoToggle');
+  const dropdown = document.getElementById('logoDropdown');
+  if (!toggle || !dropdown) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && e.target !== toggle) {
+      dropdown.classList.remove('open');
+    }
+  });
 }
 
 window.openFestivalGallery = function(key) {
@@ -347,7 +363,6 @@ function initLiveShows() {
         if (e.target === lightbox) closeLightbox();
       }
 
-      // re-query fresh every time to avoid stale references
       const closeBtn = lightbox.querySelector('.lightbox-close');
       const prevBtn  = lightbox.querySelector('.lightbox-prev');
       const nextBtn  = lightbox.querySelector('.lightbox-next');
@@ -379,17 +394,5 @@ function initLiveShows() {
     });
   });
 }
-
-document.addEventListener('click', (e) => {
-  const toggle   = document.getElementById('logoToggle');
-  const dropdown = document.getElementById('logoDropdown');
-  if (!toggle || !dropdown) return;
-  if (toggle.contains(e.target)) {
-    e.preventDefault();
-    dropdown.classList.toggle('open');
-  } else {
-    dropdown.classList.remove('open');
-  }
-});
 
 loadIncludes();
