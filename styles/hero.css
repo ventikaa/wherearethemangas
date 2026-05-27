@@ -117,8 +117,8 @@
   align-items: center;
 }
 .hero-social-link {
-  width: 28px;
-  height: 28px;
+  width: 40px !important;
+  height: 40px !important;
   color: var(--red);
   transition: opacity .2s, transform .2s;
   display: flex;
@@ -127,13 +127,15 @@
   flex-shrink: 0;
 }
 .hero-social-link svg {
-  width: 28px;
-  height: 28px;
+  width: 40px !important;
+  height: 40px !important;
+  display: block;
 }
 .hero-social-link img {
-  width: 56px;
-  height: 56px;
+  width: 40px !important;
+  height: 40px !important;
   object-fit: contain;
+  display: block;
 }
 .hero-social-link:hover {
   opacity: .7;
