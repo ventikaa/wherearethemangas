@@ -9,6 +9,7 @@ nav {
   background: rgba(8,6,4,.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(191,28,18,.18);
+  overflow: visible;
 }
 .nav-logo-img {
   display: flex;
@@ -52,7 +53,6 @@ nav {
 .nav-logo-wrap {
   position: relative;
 }
-
 .nav-logo-dropdown {
   display: none;
   position: absolute;
@@ -61,7 +61,7 @@ nav {
   background: var(--bg2);
   border: 1px solid rgba(191,28,18,.25);
   min-width: 160px;
-  z-index: 200;
+  z-index: 600;
   flex-direction: column;
 }
 .nav-logo-dropdown.open {
