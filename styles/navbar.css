@@ -11,6 +11,23 @@ nav {
   border-bottom: 1px solid rgba(191,28,18,.18);
   overflow: visible;
 }
+
+.nav-logo-wrap {
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 32px !important;
+  width: auto !important;
+  max-height: 32px !important;
+  display: block;
+  object-fit: contain;
+  cursor: pointer;
+}
+
 .nav-logo-img {
   display: flex;
   align-items: center;
@@ -22,12 +39,6 @@ nav {
   object-fit: contain;
 }
 
-.nav-logo {
-  height: 32px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
 .nav-logo-text {
   font-family: var(--font-d);
   font-size: 22px;
@@ -35,6 +46,7 @@ nav {
   color: var(--fg);
 }
 .nav-logo-text span { color: var(--red); }
+
 .nav-links {
   display: flex;
   gap: clamp(18px, 3vw, 40px);
@@ -56,14 +68,13 @@ nav {
   background: var(--red);
   transition: width .2s;
 }
+.nav-links a:hover { color: var(--fg); }
+.nav-links a:hover::after { width: 100%; }
 
-.nav-logo-wrap {
-  position: relative;
-}
 .nav-logo-dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 20px);
   left: 0;
   background: var(--bg2);
   border: 1px solid rgba(191,28,18,.25);
@@ -83,6 +94,7 @@ nav {
   padding: 14px 18px;
   transition: background .15s, color .15s;
   border-bottom: 1px solid rgba(191,28,18,.1);
+  text-decoration: none;
 }
 .nav-logo-dropdown a:last-child {
   border-bottom: none;
@@ -91,5 +103,3 @@ nav {
   background: var(--bg3);
   color: var(--red);
 }
-.nav-links a:hover { color: var(--fg); }
-.nav-links a:hover::after { width: 100%; }
