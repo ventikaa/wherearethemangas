@@ -124,6 +124,10 @@
   align-items: center;
   justify-content: center;
 }
+.hero-social-link:hover {
+  opacity: .7;
+  transform: translateY(-3px);
+}
 .hero-social-link svg {
   width: 28px; height: 28px;
 }
