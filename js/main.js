@@ -207,21 +207,6 @@ async function loadIncludes() {
   });
 
   initLiveShows();
-
-  // init logo dropdown HERE — after navbar is injected into DOM
-  const toggle   = document.getElementById('logoToggle');
-  const dropdown = document.getElementById('logoDropdown');
-  if (toggle && dropdown) {
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-    });
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target) && e.target !== toggle) {
-        dropdown.classList.remove('open');
-      }
-    });
-  }
 }
 
 function initReveal() {
@@ -393,3 +378,18 @@ function initLiveShows() {
 }
 
 loadIncludes();
+
+document.addEventListener('click', function(e) {
+  const toggle   = document.getElementById('logoToggle');
+  const dropdown = document.getElementById('logoDropdown');
+  if (!toggle || !dropdown) return;
+
+  if (e.target === toggle) {
+    e.stopPropagation();
+    const isOpen = dropdown.style.display === 'flex';
+    dropdown.style.display = isOpen ? 'none' : 'flex';
+    dropdown.style.flexDirection = 'column';
+  } else if (!dropdown.contains(e.target)) {
+    dropdown.style.display = 'none';
+  }
+});
