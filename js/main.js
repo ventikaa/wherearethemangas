@@ -5,7 +5,7 @@ const includes = [
   { id: 'include-bio',         file: 'sections/bio.html' },
   { id: 'include-quick-links', file: 'sections/quick-links.html' },
   { id: 'include-discography', file: 'sections/discography.html' },
-  { id: 'include-break',       file: 'sections/break.html' }, 
+  { id: 'include-break',       file: 'sections/break.html' },
   { id: 'include-live',        file: 'sections/live.html' },
   { id: 'include-fresh-finds', file: 'sections/fresh-finds.html' },
   { id: 'include-press',       file: 'sections/press.html' },
@@ -201,13 +201,11 @@ async function loadIncludes() {
   initReveal();
   initCarousel();
 
-  // duplicate cards for infinite scroll BEFORE attaching listeners
   document.querySelectorAll('.live-scroll-track').forEach(track => {
     track.innerHTML += track.innerHTML;
   });
 
   initLiveShows();
-  initLogoDropdown();
 }
 
 function initReveal() {
@@ -253,23 +251,6 @@ function initCarousel() {
   }
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
-}
-
-function initLogoDropdown() {
-  const toggle   = document.getElementById('logoToggle');
-  const dropdown = document.getElementById('logoDropdown');
-  if (!toggle || !dropdown) return;
-
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('open');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target) && e.target !== toggle) {
-      dropdown.classList.remove('open');
-    }
-  });
 }
 
 window.openFestivalGallery = function(key) {
@@ -396,3 +377,15 @@ function initLiveShows() {
 }
 
 loadIncludes();
+
+document.addEventListener('click', (e) => {
+  const toggle   = document.getElementById('logoToggle');
+  const dropdown = document.getElementById('logoDropdown');
+  if (!toggle || !dropdown) return;
+
+  if (toggle === e.target) {
+    dropdown.classList.toggle('open');
+  } else {
+    dropdown.classList.remove('open');
+  }
+});
