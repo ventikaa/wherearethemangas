@@ -117,19 +117,23 @@
   align-items: center;
 }
 .hero-social-link {
-  width: 36px; height: 36px;
+  width: 28px;
+  height: 28px;
   color: var(--red);
   transition: opacity .2s, transform .2s;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.hero-social-link:hover {
-  opacity: .7;
-  transform: translateY(-3px);
+  flex-shrink: 0;
 }
 .hero-social-link svg {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
+}
+.hero-social-link img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 .hero-social-link:hover {
   opacity: .7;
