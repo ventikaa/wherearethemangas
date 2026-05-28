@@ -18,6 +18,11 @@
   pointer-events: none;
 }
 
+.hero-social-link i {
+  font-size: 40px !important;
+  color: #8c0e08;
+}
+
 /* dark gradient fade at bottom */
 #home::after {
   content: '';
