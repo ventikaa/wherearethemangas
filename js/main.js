@@ -178,26 +178,44 @@ const festivalData = {
       'pics/festivals/covelong-2023-5.jpg',
     ]
   },
-
+  'ric-chennai': {
+    title: 'Running in Circles Tour — Chennai',
+    photos: [
+      'pics/festivals/ric-chennai-1.jpg',
+      'pics/festivals/ric-chennai-2.jpg',
+      'pics/festivals/ric-chennai-3.jpg',
+      'pics/festivals/ric-chennai-4.jpg',
+      'pics/festivals/ric-chennai-5.jpg',
+    ]
+  },
+  'ric-bangalore': {
+    title: 'Running in Circles Tour — Bangalore',
+    photos: [
+      'pics/festivals/ric-bangalore-1.jpg',
+      'pics/festivals/ric-bangalore-2.jpg',
+      'pics/festivals/ric-bangalore-3.jpg',
+      'pics/festivals/ric-bangalore-4.jpg',
+      'pics/festivals/ric-bangalore-5.jpg',
+    ]
+  },
+};
 
 function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
   const lbImg = lightbox.querySelector('.lightbox-img');
   let currentIndex = startIndex;
 
-  // remove old filmstrip if any
   const oldStrip = lightbox.querySelector('.lightbox-filmstrip');
   if (oldStrip) oldStrip.remove();
 
-  // build filmstrip
   const strip = document.createElement('div');
   strip.classList.add('lightbox-filmstrip');
 
-  const thumbs = photos.map((src, i) => {
+  const thumbs = photos.map(function(src, i) {
     const thumb = document.createElement('img');
     thumb.src = src;
     thumb.classList.add('lightbox-filmstrip-thumb');
     if (i === startIndex) thumb.classList.add('active');
-    thumb.addEventListener('click', () => show(i));
+    thumb.addEventListener('click', function() { show(i); });
     strip.appendChild(thumb);
     return thumb;
   });
@@ -207,8 +225,9 @@ function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
   function show(index) {
     currentIndex = (index + photos.length) % photos.length;
     lbImg.src = photos[currentIndex];
-    thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
-    // scroll active thumb into view
+    thumbs.forEach(function(t, i) {
+      t.classList.toggle('active', i === currentIndex);
+    });
     thumbs[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }
 
@@ -217,7 +236,8 @@ function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
     document.body.style.overflow = '';
     document.removeEventListener('keydown', keyHandler);
     lightbox.removeEventListener('click', backdropHandler);
-    strip.remove();
+    const s = lightbox.querySelector('.lightbox-filmstrip');
+    if (s) s.remove();
   }
 
   function keyHandler(e) {
@@ -243,8 +263,8 @@ function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
   nextBtn.replaceWith(newNext);
 
   newClose.addEventListener('click', closeLightbox);
-  newPrev.addEventListener('click',  () => show(currentIndex - 1));
-  newNext.addEventListener('click',  () => show(currentIndex + 1));
+  newPrev.addEventListener('click', function() { show(currentIndex - 1); });
+  newNext.addEventListener('click', function() { show(currentIndex + 1); });
   document.addEventListener('keydown', keyHandler);
   lightbox.addEventListener('click', backdropHandler);
 
@@ -259,7 +279,7 @@ async function loadIncludes() {
     if (!el) continue;
     try {
       const res = await fetch(item.file);
-      if (!res.ok) throw new Error(`Could not load ${item.file}`);
+      if (!res.ok) throw new Error('Could not load ' + item.file);
       const html = await res.text();
       el.innerHTML = html;
     } catch (err) {
@@ -270,7 +290,7 @@ async function loadIncludes() {
   initReveal();
   initCarousel();
 
-  document.querySelectorAll('.live-scroll-track').forEach(track => {
+  document.querySelectorAll('.live-scroll-track').forEach(function(track) {
     track.innerHTML += track.innerHTML;
   });
 
@@ -279,15 +299,15 @@ async function loadIncludes() {
 
 function initReveal() {
   const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
         observer.unobserve(e.target);
       }
     });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => observer.observe(el));
+  revealEls.forEach(function(el) { observer.observe(el); });
 }
 
 function initCarousel() {
@@ -303,12 +323,12 @@ function initCarousel() {
     return;
   }
   let current = 0;
-  slides.forEach((_, i) => {
+  slides.forEach(function(_, i) {
     const dot = document.createElement('button');
     dot.classList.add('carousel-dot');
-    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
     if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
+    dot.addEventListener('click', function() { goTo(i); });
     dotsContainer.appendChild(dot);
   });
   function goTo(index) {
@@ -318,8 +338,8 @@ function initCarousel() {
     slides[current].classList.add('active');
     dotsContainer.children[current].classList.add('active');
   }
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
+  prevBtn.addEventListener('click', function() { goTo(current - 1); });
+  nextBtn.addEventListener('click', function() { goTo(current + 1); });
 }
 
 window.openFestivalGallery = function(key) {
@@ -332,8 +352,8 @@ window.openFestivalGallery = function(key) {
 function initLiveShows() {
   const lightbox = document.getElementById('lightbox');
 
-  document.querySelectorAll('.live-card').forEach(card => {
-    card.addEventListener('click', () => {
+  document.querySelectorAll('.live-card').forEach(function(card) {
+    card.addEventListener('click', function() {
       const key  = card.dataset.show;
       const data = showData[key];
       if (!data) return;
@@ -341,8 +361,8 @@ function initLiveShows() {
     });
   });
 
-  document.querySelectorAll('.festival-gallery-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  document.querySelectorAll('.festival-gallery-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
       e.stopPropagation();
       const key = btn.dataset.festival;
       window.openFestivalGallery(key);
