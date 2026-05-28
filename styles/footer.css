@@ -39,6 +39,18 @@ footer {
 }
 .footer-rating:hover { opacity: 1; }
 
+.footer-skull-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-skull {
+  width: clamp(80px,10vw,140px);
+  opacity: .7;
+  transition: opacity .3s;
+  display: block;
+}
+.footer-skull:hover { opacity: 1; }
 /* ── LABELS ── */
 .footer-col-label {
   font-family: var(--font-s);
