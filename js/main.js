@@ -81,12 +81,12 @@ const showData = {
     ]
   },
 
-    'republik: {
+    'republik': {
     title: 'Republik',
     photos: [
       'pics/Republik/DSC01180.jpg',
       'pics/Republik/DSC01275.jpg',
-      'ppics/Republik/DSC01292.jpg',
+      'pics/Republik/DSC01292.jpg',
     ]
   },
   
