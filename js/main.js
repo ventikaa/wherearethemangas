@@ -48,11 +48,9 @@ const showData = {
     title: 'Bangalore Bychance',
     photos: [
       'pics/bb/DSC_7895.jpg',
-
     ]
   },
-
-    'gears': {
+  'gears': {
     title: 'Gears and Garage',
     photos: [
       'pics/gg/2A5A9731.jpg',
@@ -64,7 +62,6 @@ const showData = {
       'pics/gg/img033.jpg',
     ]
   },
-  
   'fandom': {
     title: 'Fandom',
     photos: [
@@ -93,16 +90,15 @@ const showData = {
       'pics/octavia/oct5.jpg',
     ]
   },
-
-  'somad':{
-    title: 'SOMAD',
-    photos:[
+  'somad': {
+    title: 'SOMAD Solo',
+    photos: [
       'pics/SOMAD solo/2A5A4187.jpg',
       'pics/SOMAD solo/2A5A4203.jpg',
       'pics/SOMAD solo/2A5A4227.jpg',
       'pics/SOMAD solo/2A5A4229.jpg',
       'pics/SOMAD solo/Cover.jpg',
-      ]
+    ]
   },
   'festember': {
     title: 'NIT Trichy Festember',
@@ -204,6 +200,79 @@ const festivalData = {
   },
 };
 
+function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
+  const lbImg = lightbox.querySelector('.lightbox-img');
+  let currentIndex = startIndex;
+
+  // remove old filmstrip if any
+  const oldStrip = lightbox.querySelector('.lightbox-filmstrip');
+  if (oldStrip) oldStrip.remove();
+
+  // build filmstrip
+  const strip = document.createElement('div');
+  strip.classList.add('lightbox-filmstrip');
+
+  const thumbs = photos.map((src, i) => {
+    const thumb = document.createElement('img');
+    thumb.src = src;
+    thumb.classList.add('lightbox-filmstrip-thumb');
+    if (i === startIndex) thumb.classList.add('active');
+    thumb.addEventListener('click', () => show(i));
+    strip.appendChild(thumb);
+    return thumb;
+  });
+
+  lightbox.appendChild(strip);
+
+  function show(index) {
+    currentIndex = (index + photos.length) % photos.length;
+    lbImg.src = photos[currentIndex];
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+    // scroll active thumb into view
+    thumbs[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', keyHandler);
+    lightbox.removeEventListener('click', backdropHandler);
+    strip.remove();
+  }
+
+  function keyHandler(e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  show(currentIndex - 1);
+    if (e.key === 'ArrowRight') show(currentIndex + 1);
+  }
+
+  function backdropHandler(e) {
+    if (e.target === lightbox) closeLightbox();
+  }
+
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn  = lightbox.querySelector('.lightbox-prev');
+  const nextBtn  = lightbox.querySelector('.lightbox-next');
+
+  const newClose = closeBtn.cloneNode(true);
+  const newPrev  = prevBtn.cloneNode(true);
+  const newNext  = nextBtn.cloneNode(true);
+  closeBtn.replaceWith(newClose);
+  prevBtn.replaceWith(newPrev);
+  nextBtn.replaceWith(newNext);
+
+  newClose.addEventListener('click', closeLightbox);
+  newPrev.addEventListener('click',  () => show(currentIndex - 1));
+  newNext.addEventListener('click',  () => show(currentIndex + 1));
+  document.addEventListener('keydown', keyHandler);
+  lightbox.addEventListener('click', backdropHandler);
+
+  show(startIndex);
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 async function loadIncludes() {
   for (const item of includes) {
     const el = document.getElementById(item.id);
@@ -276,114 +345,19 @@ function initCarousel() {
 window.openFestivalGallery = function(key) {
   const data = festivalData[key];
   if (!data) return;
-
   const lightbox = document.getElementById('lightbox');
-  const lbImg    = lightbox.querySelector('.lightbox-img');
-
-  let currentIndex = 0;
-  const photos = data.photos;
-
-  function show(index) {
-    currentIndex = (index + photos.length) % photos.length;
-    lbImg.src = photos[currentIndex];
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', keyHandler);
-    lightbox.removeEventListener('click', backdropHandler);
-  }
-
-  function keyHandler(e) {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape')     closeLightbox();
-    if (e.key === 'ArrowLeft')  show(currentIndex - 1);
-    if (e.key === 'ArrowRight') show(currentIndex + 1);
-  }
-
-  function backdropHandler(e) {
-    if (e.target === lightbox) closeLightbox();
-  }
-
-  show(0);
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-
-  const freshClose = lightbox.querySelector('.lightbox-close');
-  const freshPrev  = lightbox.querySelector('.lightbox-prev');
-  const freshNext  = lightbox.querySelector('.lightbox-next');
-
-  const newClose = freshClose.cloneNode(true);
-  const newPrev  = freshPrev.cloneNode(true);
-  const newNext  = freshNext.cloneNode(true);
-  freshClose.replaceWith(newClose);
-  freshPrev.replaceWith(newPrev);
-  freshNext.replaceWith(newNext);
-
-  newClose.addEventListener('click', closeLightbox);
-  newPrev.addEventListener('click',  () => show(currentIndex - 1));
-  newNext.addEventListener('click',  () => show(currentIndex + 1));
-  document.addEventListener('keydown', keyHandler);
-  lightbox.addEventListener('click', backdropHandler);
+  openLightboxWithFilmstrip(data.photos, 0, lightbox);
 };
 
 function initLiveShows() {
   const lightbox = document.getElementById('lightbox');
-  const lbImg    = lightbox.querySelector('.lightbox-img');
 
   document.querySelectorAll('.live-card').forEach(card => {
     card.addEventListener('click', () => {
       const key  = card.dataset.show;
       const data = showData[key];
       if (!data) return;
-
-      let currentIndex = 0;
-      const photos = data.photos;
-
-      function show(index) {
-        currentIndex = (index + photos.length) % photos.length;
-        lbImg.src = photos[currentIndex];
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-        document.removeEventListener('keydown', keyHandler);
-        lightbox.removeEventListener('click', backdropHandler);
-      }
-
-      function keyHandler(e) {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape')     closeLightbox();
-        if (e.key === 'ArrowLeft')  show(currentIndex - 1);
-        if (e.key === 'ArrowRight') show(currentIndex + 1);
-      }
-
-      function backdropHandler(e) {
-        if (e.target === lightbox) closeLightbox();
-      }
-
-      const closeBtn = lightbox.querySelector('.lightbox-close');
-      const prevBtn  = lightbox.querySelector('.lightbox-prev');
-      const nextBtn  = lightbox.querySelector('.lightbox-next');
-
-      const newClose = closeBtn.cloneNode(true);
-      const newPrev  = prevBtn.cloneNode(true);
-      const newNext  = nextBtn.cloneNode(true);
-      closeBtn.replaceWith(newClose);
-      prevBtn.replaceWith(newPrev);
-      nextBtn.replaceWith(newNext);
-
-      newClose.addEventListener('click', closeLightbox);
-      newPrev.addEventListener('click',  () => show(currentIndex - 1));
-      newNext.addEventListener('click',  () => show(currentIndex + 1));
-      document.addEventListener('keydown', keyHandler);
-      lightbox.addEventListener('click', backdropHandler);
-
-      show(0);
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      openLightboxWithFilmstrip(data.photos, 0, lightbox);
     });
   });
 
