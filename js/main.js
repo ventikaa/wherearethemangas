@@ -47,13 +47,24 @@ const showData = {
   'bangalore-bychance': {
     title: 'Bangalore Bychance',
     photos: [
-      'pics/shows/bangalore-bychance-1.jpg',
-      'pics/shows/bangalore-bychance-2.jpg',
-      'pics/shows/bangalore-bychance-3.jpg',
-      'pics/shows/bangalore-bychance-4.jpg',
-      'pics/shows/bangalore-bychance-5.jpg',
+      'pics/bb/DSC_7895.jpg',
+
     ]
   },
+
+    'gears': {
+    title: 'Gears and Garage',
+    photos: [
+      'pics/gg/2A5A9731.jpg',
+      'pics/gg/DSCF8617.JPG',
+      'pics/gg/IMG_1616.JPG',
+      'pics/gg/IMG_1617.JPG',
+      'pics/gg/img004.jpg',
+      'pics/gg/img020.jpg',
+      'pics/gg/img033.jpg',
+    ]
+  },
+  
   'fandom': {
     title: 'Fandom',
     photos: [
@@ -86,11 +97,11 @@ const showData = {
   'somad':{
     title: 'SOMAD',
     photos:[
-      pics/SOMAD solo/2A5A4187.jpg,
-      pics/SOMAD solo/2A5A4203.jpg,
-      pics/SOMAD solo/2A5A4227.jpg,
-      pics/SOMAD solo/2A5A4229.jpg,
-      pics/SOMAD solo/Cover.jpg,
+      'pics/SOMAD solo/2A5A4187.jpg',
+      'pics/SOMAD solo/2A5A4203.jpg',
+      'pics/SOMAD solo/2A5A4227.jpg',
+      'pics/SOMAD solo/2A5A4229.jpg',
+      'pics/SOMAD solo/Cover.jpg',
       ]
   },
   'festember': {
