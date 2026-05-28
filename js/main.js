@@ -167,11 +167,11 @@ const showData = {
   'black-orchid': {
     title: 'Black Orchid',
     photos: [
-      'pics/blackorchid/bo1.jpg',
-      'pics/blackorchid/bo2.JPG',
-      'pics/blackorchid/bo3.JPG',
-      'pics/blackorchid/bo4.jpg',
-      'pics/blackorchid/bo5.jpg',
+      'pics/blackorchidfinalfinal/IMG_9456.jpeg',
+      'pics/blackorchidfinalfinal/IMG_9460.jpeg',
+      'pics/blackorchidfinalfinal/SHA_5625.jpeg',
+      'pics/blackorchidfinalfinal/SHA_5772.jpeg',
+      'pics/blackorchidfinalfinal/SHA_5850.jpeg',
     ]
   },
   'the-park': {
