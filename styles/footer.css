@@ -12,9 +12,9 @@ footer {
 /* ── MAIN ROW ── */
 .footer-main {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  gap: clamp(32px,5vw,80px);
-  align-items: start;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: clamp(24px,4vw,56px);
+  align-items: center;
   margin-bottom: 32px;
 }
 @media(max-width:640px) {
