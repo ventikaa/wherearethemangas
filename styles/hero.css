@@ -6,8 +6,6 @@
   overflow: hidden;
   position: relative;
 }
-
-/* background photo */
 #home::before {
   content: '';
   position: absolute; inset: 0;
@@ -17,13 +15,6 @@
   filter: brightness(1.1) contrast(1.0);
   pointer-events: none;
 }
-
-.hero-social-link i {
-  font-size: 40px !important;
-  color: #8c0e08;
-}
-
-/* dark gradient fade at bottom */
 #home::after {
   content: '';
   position: absolute; inset: 0;
@@ -35,8 +26,6 @@
   );
   pointer-events: none;
 }
-
-/* red grain overlay — sits above photo, below text */
 .hero-grain {
   position: absolute; inset: 0;
   pointer-events: none;
@@ -46,7 +35,6 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23bf1c12'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
-
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -57,7 +45,6 @@
   padding: clamp(40px,8vh,100px) clamp(18px,5vw,56px) clamp(48px,8vh,80px);
   min-height: calc(100vh - 58px);
 }
-
 .hero-city {
   font-family: var(--font-s);
   font-size: 11px;
@@ -66,7 +53,6 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-
 .hero-h1 {
   font-family: var(--font-d);
   font-size: clamp(64px,14vw,200px);
@@ -97,7 +83,6 @@
   animation: blink .9s step-end infinite;
   color: var(--red);
 }
-
 .hero-cta {
   display: inline-block;
   margin-top: 44px;
@@ -111,7 +96,8 @@
   clip-path: polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);
   transition: background .14s, transform .12s;
 }
-
+.hero-cta:hover { background: var(--fg); transform: translate(-2px,-2px); }
+.hero-cta:active { transform: translate(1px,1px); }
 .hero-socials {
   position: absolute;
   bottom: 40px;
@@ -142,9 +128,11 @@
   object-fit: contain;
   display: block;
 }
+.hero-social-link i {
+  font-size: 48px !important;
+  color: var(--red);
+}
 .hero-social-link:hover {
   opacity: .7;
   transform: translateY(-3px);
 }
-.hero-cta:hover { background: var(--fg); transform: translate(-2px,-2px); }
-.hero-cta:active { transform: translate(1px,1px); }
