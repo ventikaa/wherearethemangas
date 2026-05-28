@@ -177,11 +177,11 @@ const showData = {
   'the-park': {
     title: 'The Park Hotel',
     photos: [
-      'pics/shows/the-park-1.jpg',
-      'pics/shows/the-park-2.jpg',
-      'pics/shows/the-park-3.jpg',
-      'pics/shows/the-park-4.jpg',
-      'pics/shows/the-park-5.jpg',
+      'pics/The Park Anniversary/Park2.jpg',
+      'pics/The Park Anniversary/Park5.jpg',
+      'pics/The Park Anniversary/Park6.jpg',
+      'pics/The Park Anniversary/Park7.jpg',
+      'pics/The Park Anniversary/Park8.jpg',
     ]
   },
 };
