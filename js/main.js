@@ -161,7 +161,7 @@ const festivalData = {
   'circle-of-love-2023': {
     title: 'Circle of Love 2023',
     photos: [
-      'pics/festivals/circle-of-love-2023-1.jpg',
+      'pics/festivals/Covelong_Classic Sharan-05453 (1).jpg',
       'pics/festivals/circle-of-love-2023-2.jpg',
       'pics/festivals/circle-of-love-2023-3.jpg',
       'pics/festivals/circle-of-love-2023-4.jpg',
@@ -178,27 +178,7 @@ const festivalData = {
       'pics/festivals/covelong-2023-5.jpg',
     ]
   },
-  'ric-chennai': {
-    title: 'Running in Circles Tour — Chennai',
-    photos: [
-      'pics/festivals/ric-chennai-1.jpg',
-      'pics/festivals/ric-chennai-2.jpg',
-      'pics/festivals/ric-chennai-3.jpg',
-      'pics/festivals/ric-chennai-4.jpg',
-      'pics/festivals/ric-chennai-5.jpg',
-    ]
-  },
-  'ric-bangalore': {
-    title: 'Running in Circles Tour — Bangalore',
-    photos: [
-      'pics/festivals/ric-bangalore-1.jpg',
-      'pics/festivals/ric-bangalore-2.jpg',
-      'pics/festivals/ric-bangalore-3.jpg',
-      'pics/festivals/ric-bangalore-4.jpg',
-      'pics/festivals/ric-bangalore-5.jpg',
-    ]
-  },
-};
+
 
 function openLightboxWithFilmstrip(photos, startIndex, lightbox) {
   const lbImg = lightbox.querySelector('.lightbox-img');
