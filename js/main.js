@@ -80,6 +80,16 @@ const showData = {
       'pics/iitm/iitm5.jpg',
     ]
   },
+
+    'republik: {
+    title: 'Republik',
+    photos: [
+      'pics/Republik/DSC01180.jpg',
+      'pics/Republik/DSC01275.jpg',
+      'ppics/Republik/DSC01292.jpg',
+    ]
+  },
+  
   'octavia': {
     title: 'Octavia — MCC',
     photos: [
