@@ -82,6 +82,17 @@ const showData = {
       'pics/octavia/oct5.jpg',
     ]
   },
+
+  'somad':{
+    title: 'SOMAD',
+    photos:[
+      pics/SOMAD solo/2A5A4187.jpg,
+      pics/SOMAD solo/2A5A4203.jpg,
+      pics/SOMAD solo/2A5A4227.jpg,
+      pics/SOMAD solo/2A5A4229.jpg,
+      pics/SOMAD solo/Cover.jpg,
+      ]
+  },
   'festember': {
     title: 'NIT Trichy Festember',
     photos: [
@@ -113,11 +124,8 @@ const showData = {
   'summer-bang-3': {
     title: 'Summer Bang Chapter 3',
     photos: [
-      'pics/shows/summer-bang-3-1.jpg',
-      'pics/shows/summer-bang-3-2.jpg',
-      'pics/shows/summer-bang-3-3.jpg',
-      'pics/shows/summer-bang-3-4.jpg',
-      'pics/shows/summer-bang-3-5.jpg',
+      'pics/sb3/Band 2 @ 24.jpg',
+      'pics/sb3/Band @ 24.jpg',
     ]
   },
   'black-orchid': {
