@@ -133,8 +133,8 @@ const showData = {
     title: 'Catamaran Brewing Co',
     photos: [
       'pics/Catamaran/SHA_3397.jpg',
-      'pics/Catamaran/SHA_3432.jpg,
-      'pics/Catamaran/SHA_3524.jpg,
+      'pics/Catamaran/SHA_3432.jpg',
+      'pics/Catamaran/SHA_3524.jpg',
     ]
   },
 
