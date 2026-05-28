@@ -171,7 +171,7 @@ const festivalData = {
   'covelong-2023': {
     title: 'Surf Turf Covelong 2023',
     photos: [
-      'pics/festivals/Covelong_Classic Sharan-05453 (1).jpg'',
+      'pics/festivals/Covelong_Classic Sharan-05453 (1).jpg',
       'pics/festivals/covelong-2023-2.jpg',
       'pics/festivals/covelong-2023-3.jpg',
       'pics/festivals/Covelong_Classic Sharan-05456.jpg',
