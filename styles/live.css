@@ -393,6 +393,41 @@
   justify-content: center;
   transition: background .15s;
 }
+
+/* ── LIGHTBOX FILMSTRIP ── */
+.lightbox-filmstrip {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 1001;
+  max-width: 90vw;
+  overflow-x: auto;
+  padding: 8px;
+  background: rgba(8,6,4,.6);
+  backdrop-filter: blur(8px);
+  scrollbar-width: none;
+}
+.lightbox-filmstrip::-webkit-scrollbar { display: none; }
+.lightbox-filmstrip-thumb {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: cover;
+  opacity: .45;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: opacity .2s, border-color .2s;
+}
+.lightbox-filmstrip-thumb:hover {
+  opacity: .8;
+}
+.lightbox-filmstrip-thumb.active {
+  opacity: 1;
+  border-color: var(--red);
+}
 .lightbox-close:hover { background: var(--red); border-color: var(--red); }
 .lightbox-prev,
 .lightbox-next {
