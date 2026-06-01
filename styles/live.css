@@ -151,11 +151,11 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: scrollLeft 60s linear infinite;
+  animation: scrollLeft 30s linear infinite;
 }
 
 .live-scroll-row.reverse .live-scroll-track {
-  animation: scrollRight 60s linear infinite;
+  animation: scrollRight 30s linear infinite;
 }
 
 .live-scroll-row:hover .live-scroll-track {
