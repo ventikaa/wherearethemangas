@@ -70,6 +70,17 @@ const showData = {
       'pics/fandom/fandom3.jpg',
     ]
   },
+
+    'bonobo': {
+    title: 'BONOBO',
+    photos: [
+      'pics/bonobo/1.png',
+      'pics/bonobo/2.png',
+      'pics/bonobo/3.png',
+      'pics/bonobo/4.png',
+    ]
+  },
+  
   'iit-madras': {
     title: 'IIT Madras',
     photos: [
