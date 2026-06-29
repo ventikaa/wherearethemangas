@@ -6,20 +6,15 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MANGAS</title>
-
   <meta property="og:title" content="MANGAS" />
   <meta property="og:description" content="Official Website" />
   <meta property="og:image" content="https://wherearethemangas.com/pics/hero-bg.jpg" />
   <meta property="og:url" content="https://wherearethemangas.com" />
   <meta property="og:type" content="website" />
-
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&family=Special+Elite&family=Permanent+Marker&display=swap" rel="stylesheet"/>
-
-  <!-- styles -->
   <link rel="stylesheet" href="styles/global.css"/>
   <link rel="stylesheet" href="styles/navbar.css"/>
   <link rel="stylesheet" href="styles/hero.css"/>
-  <link rel="stylesheet" href="styles/ticker.css"/>
   <link rel="stylesheet" href="styles/new-release.css"/>
   <link rel="stylesheet" href="styles/bio.css"/>
   <link rel="stylesheet" href="styles/discography.css"/>
@@ -29,10 +24,8 @@
   <link rel="stylesheet" href="styles/footer.css"/>
 </head>
 <body>
-
   <div id="include-navbar"></div>
   <div id="include-hero"></div>
-  <div id="include-ticker"></div>
   <div id="include-new-release"></div>
   <div id="include-bio"></div>
   <div id="include-quick-links"></div>
@@ -43,9 +36,7 @@
   <div id="include-press"></div>
   <div id="include-photo-strip"></div>
   <div id="include-footer"></div>
-
   <script src="js/main.js"></script>
-
   <!-- BURIED ALIVE GAME -->
   <script>
     fetch('buried-alive.html')
@@ -57,14 +48,18 @@
         const style = doc.querySelector('style');
         const script = doc.querySelector('script');
         if (overlay) document.body.appendChild(overlay);
-        if (style) document.head.appendChild(style);
+        if (style) {
+          const s = document.createElement('style');
+          s.textContent = style.textContent;
+          document.head.appendChild(s);
+        }
         if (script) {
           const s = document.createElement('script');
           s.textContent = script.textContent;
           document.body.appendChild(s);
         }
-      });
+      })
+      .catch(e => console.error('buried alive failed to load:', e));
   </script>
-
 </body>
 </html>
