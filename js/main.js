@@ -432,7 +432,7 @@ loadIncludes().then(function() {
   var day = date.toLocaleDateString('en-US', { day: '2-digit' });
   var month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
   var year = date.getFullYear();
-  var poster = 'pics/show-cover.jpg';
+  var poster = 'pics/brutalcarnage.jpg';
   return '<a class="bit-event" href="' + e.url + '" target="_blank">'
     + '<div class="bit-poster"><img src="' + poster + '" alt="Show poster"/></div>'
           + '<div class="bit-event-info">'
