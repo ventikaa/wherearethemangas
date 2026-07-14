@@ -1,16 +1,19 @@
 const includes = [
-  { id: 'include-navbar',      file: 'sections/navbar.html' },
-  { id: 'include-hero',        file: 'sections/hero.html' },
-  { id: 'include-new-release', file: 'sections/new-release.html' },
-  { id: 'include-bio',         file: 'sections/bio.html' },
-  { id: 'include-quick-links', file: 'sections/quick-links.html' },
-  { id: 'include-discography', file: 'sections/discography.html' },
-  { id: 'include-break',       file: 'sections/break.html' },
-  { id: 'include-live',        file: 'sections/live.html' },
-  { id: 'include-fresh-finds', file: 'sections/fresh-finds.html' },
-  { id: 'include-press',       file: 'sections/press.html' },
-  { id: 'include-photo-strip', file: 'sections/photo-strip.html' },
-  { id: 'include-footer',      file: 'sections/footer.html' },
+  { id: 'include-navbar',         file: 'sections/navbar.html' },
+  { id: 'include-hero',           file: 'sections/hero.html' },
+  { id: 'include-new-release',    file: 'sections/new-release.html' },
+  { id: 'include-bio',            file: 'sections/bio.html' },
+  { id: 'include-quick-links',    file: 'sections/quick-links.html' },
+  { id: 'include-discography',    file: 'sections/discography.html' },
+  { id: 'include-live',           file: 'sections/live.html' },
+  { id: 'include-break2',         file: 'sections/break2.html' },
+  { id: 'include-merch',          file: 'sections/merch.html' },
+  { id: 'include-break',          file: 'sections/break.html' },
+  { id: 'include-upcoming-shows', file: 'sections/upcoming-shows.html' },
+  { id: 'include-fresh-finds',    file: 'sections/fresh-finds.html' },
+  { id: 'include-press',          file: 'sections/press.html' },
+  { id: 'include-photo-strip',    file: 'sections/photo-strip.html' },
+  { id: 'include-footer',         file: 'sections/footer.html' },
 ];
 
 const showData = {
@@ -70,17 +73,6 @@ const showData = {
       'pics/fandom/fandom3.jpg',
     ]
   },
-
-    'bonobo': {
-    title: 'BONOBO',
-    photos: [
-      'pics/bonobo/1.png',
-      'pics/bonobo/2.png',
-      'pics/bonobo/3.png',
-      'pics/bonobo/4.png',
-    ]
-  },
-  
   'iit-madras': {
     title: 'IIT Madras',
     photos: [
@@ -91,16 +83,6 @@ const showData = {
       'pics/iitm/iitm5.jpg',
     ]
   },
-
-    'republik': {
-    title: 'Republik',
-    photos: [
-      'pics/Republik/DSC01180.jpg',
-      'pics/Republik/DSC01275.jpg',
-      'pics/Republik/DSC01292.jpg',
-    ]
-  },
-  
   'octavia': {
     title: 'Octavia — MCC',
     photos: [
@@ -149,25 +131,6 @@ const showData = {
       'pics/phoenix/ph5.jpg',
     ]
   },
-
-    'pondi': {
-    title: 'Catamaran Brewing Co',
-    photos: [
-      'pics/Catamaran/SHA_3397.jpg',
-      'pics/Catamaran/SHA_3432.jpg',
-      'pics/Catamaran/SHA_3524.jpg',
-    ]
-  },
-
-      'pondi': {
-    title: 'Catamaran Brewing Co',
-    photos: [
-      'pics/Catamaran/SHA_3397.jpg',
-      'pics/Catamaran/SHA_3432.jpg',
-      'pics/Catamaran/SHA_3524.jpg',
-    ]
-  },
-  
   'summer-bang-3': {
     title: 'Summer Bang Chapter 3',
     photos: [
@@ -178,21 +141,35 @@ const showData = {
   'black-orchid': {
     title: 'Black Orchid',
     photos: [
-      'pics/blackorchidfinalfinal/IMG_9456.jpeg',
-      'pics/blackorchidfinalfinal/IMG_9460.jpeg',
-      'pics/blackorchidfinalfinal/SHA_5625.jpeg',
-      'pics/blackorchidfinalfinal/SHA_5772.jpeg',
-      'pics/blackorchidfinalfinal/SHA_5850.jpeg',
+      'pics/blackorchid/bo1.jpg',
+      'pics/blackorchid/bo2.JPG',
+      'pics/blackorchid/bo3.JPG',
+      'pics/blackorchid/bo4.jpg',
+      'pics/blackorchid/bo5.jpg',
     ]
   },
   'the-park': {
     title: 'The Park Hotel',
     photos: [
-      'pics/The Park Anniversary/Park2.jpg',
-      'pics/The Park Anniversary/Park5.jpg',
-      'pics/The Park Anniversary/Park6.jpg',
-      'pics/The Park Anniversary/Park7.jpg',
-      'pics/The Park Anniversary/Park8.jpg',
+      'pics/shows/the-park-1.jpg',
+      'pics/shows/the-park-2.jpg',
+      'pics/shows/the-park-3.jpg',
+      'pics/shows/the-park-4.jpg',
+      'pics/shows/the-park-5.jpg',
+    ]
+  },
+  'pondi': {
+    title: 'Catamaran Brewing Co',
+    photos: [
+      'pics/Catamaran/SHA_3397.jpg',
+      'pics/Catamaran/SHA_3432.jpg',
+      'pics/Catamaran/SHA_3524.jpg',
+    ]
+  },
+  'republik': {
+    title: 'Republik',
+    photos: [
+      'pics/Republik/DSC01180.jpg',
     ]
   },
 };
@@ -201,21 +178,21 @@ const festivalData = {
   'circle-of-love-2023': {
     title: 'Circle of Love 2023',
     photos: [
-      'pics/festivals/circle-of-love-2023-4.jpg',
+      'pics/festivals/Covelong_Classic Sharan-05453 (1).jpg',
       'pics/festivals/circle-of-love-2023-2.jpg',
       'pics/festivals/circle-of-love-2023-3.jpg',
-      'pics/festivals/circle-of-love-2023-1.jpg',
-      'pics/festivals/circle-of-love-2023-poster.png',
+      'pics/festivals/Covelong_Classic Sharan-05456.jpg',
+      'pics/festivals/Covelong_Classic Sharan-05467.jpg',
     ]
   },
   'covelong-2023': {
     title: 'Surf Turf Covelong 2023',
     photos: [
-      'pics/festivals/Covelong_Classic Sharan-05453 (1).jpg',
+      'pics/festivals/covelong-2023-1.jpg',
       'pics/festivals/covelong-2023-2.jpg',
       'pics/festivals/covelong-2023-3.jpg',
-      'pics/festivals/Covelong_Classic Sharan-05456.jpg',
-      'pics/festivals/Covelong_Classic Sharan-05467.jpg',
+      'pics/festivals/covelong-2023-4.jpg',
+      'pics/festivals/covelong-2023-5.jpg',
     ]
   },
   'ric-chennai': {
@@ -335,6 +312,7 @@ async function loadIncludes() {
   });
 
   initLiveShows();
+  initMerch();
 }
 
 function initReveal() {
@@ -410,4 +388,70 @@ function initLiveShows() {
   });
 }
 
-loadIncludes();
+function initMerch() {
+  document.querySelectorAll('.merch-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.merch-tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      document.querySelectorAll('.merch-grid').forEach(function(g) {
+        g.classList.remove('active');
+      });
+      tab.classList.add('active');
+      const grid = document.getElementById('tab-' + tab.dataset.tab);
+      if (grid) grid.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.merch-card').forEach(function(card) {
+    const slides = card.querySelector('.merch-slides');
+    const dots = card.querySelectorAll('.merch-dot');
+    if (!slides || !dots.length) return;
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        const idx = parseInt(dot.dataset.idx);
+        slides.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        dots.forEach(function(d) { d.classList.remove('active'); });
+        dot.classList.add('active');
+      });
+    });
+  });
+}
+
+loadIncludes().then(function() {
+  fetch('https://rest.bandsintown.com/artists/id_15641251/events?app_id=61964b5ab266d5c4a4dc518417927410&date=upcoming')
+    .then(function(r) { return r.json(); })
+    .then(function(events) {
+      var container = document.getElementById('bit-events');
+      if (!container) return;
+      if (!events || events.length === 0) {
+        container.innerHTML = '<div class="bit-no-shows">No upcoming shows — follow for updates.</div>';
+        return;
+      }container.innerHTML = events.map(function(e) {
+  var date = new Date(e.datetime);
+  var day = date.toLocaleDateString('en-US', { day: '2-digit' });
+  var month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  var year = date.getFullYear();
+  var poster = 'pics/show-cover.jpg';
+  return '<a class="bit-event" href="' + e.url + '" target="_blank">'
+    + '<div class="bit-poster"><img src="' + poster + '" alt="Show poster"/></div>'
+          + '<div class="bit-event-info">'
+          + '<div class="bit-date">'
+          + '<span class="bit-day">' + day + '</span>'
+          + '<span class="bit-month">' + month + '</span>'
+          + '<span class="bit-year">' + year + '</span>'
+          + '</div>'
+          + '<div class="bit-details">'
+          + '<div class="bit-venue">' + e.venue.name + '</div>'
+          + '<div class="bit-location">' + e.venue.city + ', ' + e.venue.country + '</div>'
+          + (e.offers && e.offers.length ? '<div class="bit-tickets">GET TICKETS →</div>' : '')
+          + '</div>'
+          + '</div>'
+          + '</a>';
+      }).join('');
+    })
+    .catch(function() {
+      var container = document.getElementById('bit-events');
+      if (container) container.innerHTML = '<div class="bit-no-shows">No upcoming shows — follow for updates.</div>';
+    });
+});

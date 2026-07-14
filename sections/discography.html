@@ -1,96 +1,83 @@
 <section id="music">
   <h2 class="about-heading reveal" style="margin-bottom:48px">DISCOGRAPHY</h2>
-  <div class="disco-grid">
 
-    <!-- ??? upcoming -->
-    <div class="release-card reveal">
-      <div class="release-art">
-        <img src="pics/previewmaybe album.png" alt="???"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-        <div class="release-art-text">???</div>
+  <!-- ── BURIED ALIVE ALBUM ── -->
+  <div class="ba-block reveal" style="margin-bottom:40px">
+    <div class="ba-cover">
+      <img src="pics/previewmaybe album.png" alt="Buried Alive" onclick="openBuriedAlive()" style="cursor:pointer"/>
+    </div>
+    <div class="ba-content">
+      <div class="ba-header">
+        <h2 class="ba-title">BURIED ALIVE</h2>
+        <div class="ba-meta">ALBUM &nbsp;·&nbsp; MMXXVI</div>
       </div>
-      <div class="release-body">
-        <div class="release-type">
-          <span>???</span>
-          <span class="release-year">2026</span>
-        </div>
-        <div class="release-title">???</div>
-        <div class="release-desc">Good things come to those who wait</div>
-        <a class="release-link" href="" target="_blank">→</a>
+      <div class="ba-tracklist">
+        <div class="ba-track"><span class="ba-num">01</span><span class="ba-name">Turn the Wheel — Re-Vision</span></div>
+        <div class="ba-track"><span class="ba-num">02</span><span class="ba-name">Patent Pending</span></div>
+        <div class="ba-track"><span class="ba-num">03</span><span class="ba-name">Pretending</span></div>
+        <div class="ba-track"><span class="ba-num">04</span><span class="ba-name">WHERE'S MY SMILE</span></div>
+        <div class="ba-track"><span class="ba-num">05</span><span class="ba-name">Punkcity</span></div>
+        <div class="ba-track"><span class="ba-num">06</span><span class="ba-name">SOMETIMES IT FEELS LIKE THIS</span></div>
+        <div class="ba-track"><span class="ba-num">07</span><span class="ba-name">Buried Alive (Ft. Paul David &amp; HRTK)</span></div>
+        <div class="ba-track"><span class="ba-num">08</span><span class="ba-name">The Buffet (Vocal Melody Song)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SINGLES ── -->
+  <div class="singles-header reveal">
+    <span class="singles-label">SINGLES</span>
+    <div class="singles-line"></div>
+  </div>
+
+  <div class="singles-grid reveal">
+
+    <div class="single-card">
+      <div class="single-art">
+        <img src="pics/TTW.png" alt="Turn The Wheel"/>
+      </div>
+      <div class="single-body">
+        <div class="single-title">Turn The Wheel</div>
+        <div class="single-meta">SINGLE &nbsp;·&nbsp; 2025</div>
+        <a class="single-arrow" href="https://open.spotify.com/track/0QSu3nZ9OQWVaDzXBarDxk?si=ae3776c2242c4290" target="_blank">→</a>
       </div>
     </div>
 
-    <!-- Turn The Wheel -->
-    <div class="release-card reveal" style="transition-delay:.1s">
-      <div class="release-art">
-        <img src="pics/TTW.png" alt="Turn The Wheel"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+    <div class="single-card">
+      <div class="single-art">
+        <img src="pics/Rewind Artwork.png" alt="Rewind"/>
       </div>
-      <div class="release-body">
-        <div class="release-type">
-          <span>SINGLE</span>
-          <span class="release-year">2025</span>
-        </div>
-        <div class="release-title">Turn The Wheel</div>
-        <div class="release-desc">An alternative rock/punk track that confronts a collapsing world built on illusions, apathy, and silent obedience.</div>
-        <a class="release-link" href="https://open.spotify.com/track/0QSu3nZ9OQWVaDzXBarDxk?si=ae3776c2242c4290" target="_blank">→</a>
+      <div class="single-body">
+        <div class="single-title">Rewind</div>
+        <div class="single-meta">SINGLE &nbsp;·&nbsp; 2025</div>
+        <a class="single-arrow" href="https://open.spotify.com/track/2MVD8TfDihIp5xD7eeftIF?si=1373aa211a59405d" target="_blank">→</a>
       </div>
     </div>
 
-    <!-- Rewind -->
-    <div class="release-card reveal" style="transition-delay:.2s">
-      <div class="release-art">
-        <img src="pics/Rewind Artwork.png" alt="Rewind"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+    <div class="single-card">
+      <div class="single-art">
+        <img src="pics/PrisonSong_Artwork.png" alt="Prison Song"/>
       </div>
-      <div class="release-body">
-        <div class="release-type">
-          <span>SINGLE</span>
-          <span class="release-year">2025</span>
-        </div>
-        <div class="release-title">Rewind</div>
-        <div class="release-desc">The song captures the disorienting stillness that follows emotional upheaval, exploring the idea that even freedom can carry echoes of what we've left behind.</div>
-        <a class="release-link" href="https://open.spotify.com/track/2MVD8TfDihIp5xD7eeftIF?si=1373aa211a59405d" target="_blank">→</a>
-      </div>
-    </div>
-
-    <!-- Prison Song -->
-    <div class="release-card reveal" style="transition-delay:.3s">
-      <div class="release-art">
-        <img src="pics/PrisonSong_Artwork.png" alt="Prison Song"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-      </div>
-      <div class="release-body">
-        <div class="release-type">
-          <span>SINGLE</span>
-          <span class="release-year">2025</span>
-        </div>
-        <div class="release-title">Prison Song</div>
-        <div class="release-desc">a farewell and a rebirth</div>
-        <a class="release-link" href="https://open.spotify.com/track/0CiDbhN87ler13FN6HMF8Q?si=cf86df8baa694d06" target="_blank">→</a>
+      <div class="single-body">
+        <div class="single-title">Prison Song</div>
+        <div class="single-meta">SINGLE &nbsp;·&nbsp; 2025</div>
+        <a class="single-arrow" href="https://open.spotify.com/track/0CiDbhN87ler13FN6HMF8Q?si=cf86df8baa694d06" target="_blank">→</a>
       </div>
     </div>
 
   </div>
 
   <!-- ── HEART ORBIT EP ── -->
-  <div class="ep-block reveal" style="margin-top:20px">
-
-    <div class="ep-left">
+  <div class="ep-block reveal" style="margin-top:40px">
+    <div class="ba-cover">
       <img src="pics/Heart.Orbit EP.jpg" alt="Heart Orbit EP"/>
-      <div class="ep-cover-label">A SIX-TRACK JOURNEY THROUGH HEARTBREAK, DREAMS, AND THE SPACES IN BETWEEN.</div>
     </div>
-
-    <div class="ep-right">
-
-      <div class="ep-header">
-        <div class="ep-title">Heart Orbit</div>
-        <div class="ep-header-meta">
-          <div class="ep-tag">EP</div>
-          <div class="ep-year">2021 – 2025</div>
-        </div>
+    <div class="ba-content">
+      <div class="ba-header">
+        <h2 class="ba-title" style="font-size:clamp(32px,4vw,56px)">HEART ORBIT</h2>
+        <div class="ba-meta">EP &nbsp;·&nbsp; 2021–2025</div>
       </div>
-
+      <div class="ep-subtitle">A SIX-TRACK JOURNEY THROUGH HEARTBREAK, DREAMS, AND THE SPACES IN BETWEEN.</div>
       <div class="ep-tracks">
 
         <div class="ep-track">
@@ -107,7 +94,6 @@
           <div class="ep-track-fallback">SC</div>
           <span class="ep-track-name">Starcity</span>
           <a class="release-link" href="https://open.spotify.com/track/43K3UQ3wjGRhZrf2EQ1t21?si=1cc183b7fdd64f5b" target="_blank">→</a>
-
         </div>
 
         <div class="ep-track">
@@ -140,12 +126,10 @@
           <div class="ep-track-fallback">DL</div>
           <span class="ep-track-name">Dreamland</span>
           <a class="release-link" href="https://open.spotify.com/track/2UKmADjXZbMO0LxilYdSuS?si=88424316a81c4404" target="_blank">→</a>
-
         </div>
 
       </div>
     </div>
-
   </div>
 
 </section>

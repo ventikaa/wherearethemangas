@@ -1,0 +1,178 @@
+#merch {
+  padding: clamp(80px,12vh,140px) clamp(18px,5vw,56px);
+  background: var(--bg);
+}
+.merch-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── DM BANNER ── */
+.merch-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--red);
+  padding: 14px 24px;
+  margin-bottom: 32px;
+  font-family: 'Special Elite', monospace;
+  font-size: clamp(11px,1.3vw,14px);
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--fg);
+  flex-wrap: wrap;
+  text-align: center;
+}
+.merch-banner-link {
+  color: var(--fg);
+  text-decoration: underline;
+  transition: opacity .15s;
+  font-family: 'Special Elite', monospace;
+  letter-spacing: .25em;
+}
+.merch-banner-link:hover { opacity: .7; }
+
+/* ── TABS ── */
+.merch-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+}
+.merch-tab {
+  font-family: 'Special Elite', monospace;
+  font-size: 13px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  background: none;
+  border: 1px solid rgba(191,28,18,.4);
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  margin-right: 8px;
+  position: relative;
+}
+.merch-tab:hover {
+  background: var(--red);
+  color: var(--fg);
+  border-color: var(--red);
+  z-index: 1;
+}
+.merch-tab.active {
+  background: var(--red);
+  color: var(--fg);
+  border-color: var(--red);
+  z-index: 1;
+}
+
+/* ── GRID ── */
+.merch-grid {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.merch-grid.active { display: grid; }
+@media(max-width:720px) {
+  .merch-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:480px) {
+  .merch-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CARD ── */
+.merch-card {
+  border: 1px solid rgba(191,28,18,.4);
+  background: var(--bg2);
+  overflow: hidden;
+  position: relative;
+  transition: border-color .2s;
+}
+.merch-card:hover { border-color: var(--red); }
+
+/* ── SLIDER ── */
+.merch-slider {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg3);
+}
+.merch-slides {
+  display: flex;
+  transition: transform .4s ease;
+  height: 100%;
+}
+.merch-slides img {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.merch-slider:hover .merch-slides img:first-child {
+  transform: scale(1.06);
+}
+.merch-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.merch-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(237,228,208,.4);
+  cursor: pointer;
+  transition: background .2s;
+  display: block;
+}
+.merch-dot.active { background: var(--red); }
+
+/* ── COMING SOON OVERLAY ── */
+.merch-coming-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,6,4,.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.merch-coming-overlay span {
+  font-family: var(--font-d);
+  font-size: clamp(20px,3vw,32px);
+  letter-spacing: .3em;
+  color: var(--fg);
+  text-transform: uppercase;
+  border: 1px solid rgba(237,228,208,.3);
+  padding: 10px 20px;
+}
+
+/* ── INFO ── */
+.merch-info {
+  padding: 16px 18px;
+}
+.merch-name {
+  font-family: var(--font-d);
+  font-size: clamp(14px,1.8vw,20px);
+  letter-spacing: .1em;
+  color: var(--fg);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.merch-sold {
+  font-family: 'Special Elite', monospace;
+  font-size: 12px;
+  letter-spacing: .3em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+.merch-soon-text {
+  color: var(--fg-off);
+}

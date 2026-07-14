@@ -1,0 +1,28 @@
+/* ── TICKER — solid red print band ─────────────────────── */
+
+.ticker {
+  background: var(--blood);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 5;
+}
+.ticker::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--speckle);
+  opacity: .1;
+  pointer-events: none;
+}
+.ticker-track { display: inline-flex; animation: ticker-scroll 22s linear infinite; }
+.ticker span {
+  font-family: var(--f-display);
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--ink);
+  padding: 10px 26px 8px;
+  display: inline-block;
+}
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker:hover .ticker-track { animation-play-state: paused; }

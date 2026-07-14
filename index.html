@@ -6,44 +6,106 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MANGAS</title>
-
-<meta property="og:title" content="MANGAS" />
-<meta property="og:description" content="Official Website" />
-<meta property="og:image" content="https://wherearethemangas.com/pics/hero-bg.jpg" />
-<meta property="og:url" content="https://wherearethemangas.com" />
-<meta property="og:type" content="website" />
-  
+  <meta property="og:title" content="MANGAS" />
+  <meta property="og:description" content="Official Website" />
+  <meta property="og:image" content="https://wherearethemangas.com/pics/hero-bg.jpg" />
+  <meta property="og:url" content="https://wherearethemangas.com" />
+  <meta property="og:type" content="website" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&family=Special+Elite&family=Permanent+Marker&display=swap" rel="stylesheet"/>
-
-  <!-- styles -->
   <link rel="stylesheet" href="styles/global.css"/>
   <link rel="stylesheet" href="styles/navbar.css"/>
   <link rel="stylesheet" href="styles/hero.css"/>
-  <link rel="stylesheet" href="styles/ticker.css"/>
   <link rel="stylesheet" href="styles/new-release.css"/>
   <link rel="stylesheet" href="styles/bio.css"/>
   <link rel="stylesheet" href="styles/discography.css"/>
   <link rel="stylesheet" href="styles/live.css"/>
   <link rel="stylesheet" href="styles/press.css"/>
+  <link rel="stylesheet" href="styles/merch.css"/>
   <link rel="stylesheet" href="styles/photo-strip.css"/>
   <link rel="stylesheet" href="styles/footer.css"/>
 </head>
 <body>
-
   <div id="include-navbar"></div>
   <div id="include-hero"></div>
-  <div id="include-ticker"></div>
   <div id="include-new-release"></div>
   <div id="include-bio"></div>
   <div id="include-quick-links"></div>
   <div id="include-discography"></div>
-  <div id="include-break"></div>
   <div id="include-live"></div>
+  <div id="include-break2"></div>
+  <div id="include-merch"></div>
+  <div id="include-break"></div>
+  <div id="include-upcoming-shows"></div>
   <div id="include-fresh-finds"></div>
   <div id="include-press"></div>
   <div id="include-photo-strip"></div>
   <div id="include-footer"></div>
 
   <script src="js/main.js"></script>
+
+  <!-- BANDSINTOWN CUSTOM FETCH -->
+  <script>
+    fetch('https://rest.bandsintown.com/artists/id_15641251/events?app_id=61964b5ab266d5c4a4dc518417927410&date=upcoming')
+      .then(function(r) { return r.json(); })
+      .then(function(events) {
+        var container = document.getElementById('bit-events');
+        if (!container) return;
+        if (!events || events.length === 0) {
+          container.innerHTML = '<div class="bit-no-shows">No upcoming shows — follow for updates.</div>';
+          return;
+        }
+        container.innerHTML = events.map(function(e) {
+          var date = new Date(e.datetime);
+          var day = date.toLocaleDateString('en-US', { day: '2-digit' });
+          var month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+          var year = date.getFullYear();
+          var poster = e.artist.image_url || e.image_url || '';
+          return '<a class="bit-event" href="' + e.url + '" target="_blank">'
+            + (poster ? '<div class="bit-poster"><img src="' + poster + '" alt="Show poster"/></div>' : '<div class="bit-poster-placeholder"></div>')
+            + '<div class="bit-event-info">'
+            + '<div class="bit-date">'
+            + '<span class="bit-day">' + day + '</span>'
+            + '<span class="bit-month">' + month + '</span>'
+            + '<span class="bit-year">' + year + '</span>'
+            + '</div>'
+            + '<div class="bit-details">'
+            + '<div class="bit-venue">' + e.venue.name + '</div>'
+            + '<div class="bit-location">' + e.venue.city + ', ' + e.venue.country + '</div>'
+            + (e.offers && e.offers.length ? '<div class="bit-tickets">GET TICKETS →</div>' : '')
+            + '</div>'
+            + '</div>'
+            + '</a>';
+        }).join('');
+      })
+      .catch(function() {
+        var container = document.getElementById('bit-events');
+        if (container) container.innerHTML = '<div class="bit-no-shows">No upcoming shows — follow for updates.</div>';
+      });
+  </script>
+
+  <!-- BURIED ALIVE GAME -->
+  <script>
+    fetch('buried-alive.html')
+      .then(r => r.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const overlay = doc.getElementById('ba-overlay');
+        const style = doc.querySelector('style');
+        const script = doc.querySelector('script');
+        if (overlay) document.body.appendChild(overlay);
+        if (style) {
+          const s = document.createElement('style');
+          s.textContent = style.textContent;
+          document.head.appendChild(s);
+        }
+        if (script) {
+          const s = document.createElement('script');
+          s.textContent = script.textContent;
+          document.body.appendChild(s);
+        }
+      })
+      .catch(e => console.error('buried alive failed to load:', e));
+  </script>
 </body>
 </html>
