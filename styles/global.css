@@ -165,7 +165,7 @@
 #upcoming-shows::before {
   content: '';
   position: absolute; inset: 0;
-  background-image: url('../pics/brutalcarnage.jpg');
+  background-image: url('../pics/starcityff.png');
   background-size: fit;
   background-position: center;
   z-index: 0;
