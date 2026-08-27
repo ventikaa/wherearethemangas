@@ -140,13 +140,14 @@
   overflow: hidden;
   border-right: .06em solid #ede4d0;
   width: 0;
+  padding-right: .08em;
   animation:
     h1-typing 1.3s steps(6, end) .25s forwards,
     h1-cursor .75s step-end infinite;
 }
 .hero-h1:hover { animation: h1-glitch .32s steps(2, end) 2; }
 
-@keyframes h1-typing { from { width: 0; } to { width: 6.35ch; } }
+@keyframes h1-typing { from { width: 0; } to { width: 6.6ch; } }
 @keyframes h1-cursor {
   0%, 100% { border-color: #ede4d0; }
   50%      { border-color: transparent; }
@@ -207,7 +208,7 @@
   .hero-location { font-size: 10px; letter-spacing: .22em; }
   .hero-mark { display: none; }
 }
-@keyframes h1-typing-narrow { from { width: 0; } to { width: 6ch; } }
+@keyframes h1-typing-narrow { from { width: 0; } to { width: 6.4ch; } }
 @media(max-width:600px) {
   .hero-h1 { animation-name: h1-typing-narrow, h1-cursor; }
 }
