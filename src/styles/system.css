@@ -1,0 +1,253 @@
+/* ══════════════════════════════════════════════════════════
+   SYSTEM — redesign layer (bolder reinvention)
+   Same world: near-black / bone / blood-red, Bebas + Barlow +
+   Special Elite. Loaded after global.css so it wins on shared
+   primitives, then per-section files layer specifics.
+   ══════════════════════════════════════════════════════════ */
+
+:root {
+  --red-hot:  #e2261a;   /* brighter red for glows + focus */
+  --red-ink:  #6b0a05;   /* deep dried-blood */
+  --edge:     rgba(191,28,18,.22);
+  --edge-2:   rgba(237,228,208,.10);
+  --stamp:    'Special Elite', monospace;
+
+  /* spacing rhythm */
+  --pad-x:    clamp(18px, 5vw, 56px);
+  --sec-y:    clamp(88px, 13vh, 150px);
+  --wrap:     1200px;
+}
+
+/* ── BROWSER SURFACES — the parts you don't "draw" ───────── */
+::selection            { background: var(--red); color: var(--bone, #ede4d0); text-shadow: none; }
+::-moz-selection       { background: var(--red); color: #ede4d0; text-shadow: none; }
+html                   { caret-color: var(--red-hot); }
+::-webkit-scrollbar        { width: 8px; height: 8px; }
+::-webkit-scrollbar-track  { background: #050403; }
+::-webkit-scrollbar-thumb  { background: var(--red2); border: 2px solid #050403; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
+* { scrollbar-color: var(--red2) #050403; }
+
+:focus-visible {
+  outline: 2px solid var(--red-hot);
+  outline-offset: 3px;
+}
+/* keep the link underline off by default, tick it in red on focus/hover where wired */
+
+/* ── FAINT SCANLINES (below grain, above content) ────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: .35;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0px,
+    rgba(0,0,0,0) 2px,
+    rgba(0,0,0,.16) 3px,
+    rgba(0,0,0,0) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* ══ MASTHEAD SYSTEM — lifts every section heading ═══════════
+   .section-label  → stamped zine tag with a solid red slug
+   .about-heading  → giant Bebas with red print-offset + rule  */
+
+.section-label {
+  font-family: var(--stamp);
+  font-size: 10px;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(20px, 3vh, 34px);
+}
+.section-label::before {
+  content: '';
+  width: 26px; height: 11px;
+  background: var(--red);
+  flex: 0 0 auto;
+  box-shadow: 3px 3px 0 var(--red-ink);
+}
+.section-label::after {
+  content: '';
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(to right, var(--red), transparent);
+  opacity: .5;
+}
+
+.about-heading,
+.press-heading,
+.ql-heading {
+  position: relative;
+  text-shadow: 4px 0 0 rgba(191,28,18,.55), -1px 0 0 rgba(191,28,18,.20);
+}
+/* short red rule pinned to the baseline-left of each masthead */
+.about-heading {
+  background-image: linear-gradient(var(--red), var(--red));
+  background-repeat: no-repeat;
+  background-size: 84px 5px;
+  background-position: left calc(100% - 2px);
+  padding-bottom: 24px;
+}
+
+/* ── SHARED STAMPED BUTTON ───────────────────────────────── */
+.stamp-btn {
+  --sb: var(--red);
+  font-family: var(--stamp);
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #ede4d0;
+  background: transparent;
+  border: 1px solid var(--sb);
+  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: color .18s ease, background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.stamp-btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--sb);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .28s cubic-bezier(.16,1,.3,1);
+  z-index: -1;
+}
+.stamp-btn:hover {
+  color: #080604;
+  box-shadow: 4px 4px 0 var(--red-ink);
+  transform: translate(-1px,-1px);
+}
+.stamp-btn:hover::after { transform: scaleX(1); }
+
+/* ── SCROLL REVEAL — clip wipe + rise + de-blur ──────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  filter: blur(6px);
+  clip-path: inset(0 0 8% 0);
+  transition:
+    opacity .7s cubic-bezier(.16,1,.3,1),
+    transform .8s cubic-bezier(.16,1,.3,1),
+    filter .7s ease,
+    clip-path .8s cubic-bezier(.16,1,.3,1);
+  will-change: opacity, transform, filter;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* ── DIVIDER — punkier hairline w/ red center tick ───────── */
+.divider {
+  position: relative;
+}
+.divider::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: -3px;
+  width: 7px; height: 7px;
+  background: var(--red);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* ══ TICKER — running blood-band marquee ════════════════════ */
+.wm-ticker {
+  background: var(--red);
+  border-top: 1px solid var(--red-ink);
+  border-bottom: 1px solid var(--red-ink);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 6;
+  padding: 11px 0 9px;
+}
+.wm-ticker::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: .10;
+  mix-blend-mode: multiply;
+}
+.wm-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  animation: wm-scroll 34s linear infinite;
+}
+.wm-ticker:hover .wm-ticker-track { animation-play-state: paused; }
+.wm-ticker span {
+  font-family: var(--font-d);
+  font-size: clamp(18px, 2vw, 26px);
+  letter-spacing: .14em;
+  color: #080604;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+}
+.wm-ticker span::after {
+  content: '✶';
+  margin-left: 26px;
+  font-size: .7em;
+  color: rgba(8,6,4,.55);
+}
+@keyframes wm-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ══ NAVBAR polish ══════════════════════════════════════════ */
+.nav-links a {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s cubic-bezier(.16,1,.3,1);
+}
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-listen-btn { position: relative; overflow: hidden; }
+.nav-listen-btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--red);
+  transform: translateY(101%);
+  transition: transform .25s cubic-bezier(.16,1,.3,1);
+  z-index: -1;
+}
+.nav-listen-btn:hover { color: #080604 !important; }
+.nav-listen-btn:hover::after { transform: translateY(0); }
+
+/* ══ REDUCED MOTION ═════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  .wm-ticker-track { animation: none; transform: translateX(0); }
+  .hero-h1 { animation: none !important; width: auto !important; border-right: none !important; }
+  * { scroll-behavior: auto !important; }
+}
