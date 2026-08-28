@@ -31,7 +31,6 @@ import './styles/merch.css'
 import './styles/photo-strip.css'
 import './styles/footer.css'
 
-const ticker1Items = ['MANGAS', 'ALT ROCK', 'PUNK ROCK', 'HARDCORE', 'BURIED ALIVE — MMXXVI', 'CHENNAI // PHILADELPHIA', 'மாங்காய் — RAW MANGO']
 const ticker2Items = ['WHERE ARE THE MANGAS', 'BOOK THE BAND', 'NEW MUSIC OUT NOW', "SLIDE INTO THE DM'S", 'CHENNAI // PHILADELPHIA']
 
 export default function App() {
