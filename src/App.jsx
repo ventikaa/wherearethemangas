@@ -63,7 +63,6 @@ export default function App() {
     <>
       <Navbar />
       <Hero />
-      <Ticker items={ticker1Items} />
       <NewRelease />
       <Bio />
       <QuickLinks />
