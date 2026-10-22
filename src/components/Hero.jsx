@@ -8,12 +8,10 @@ export default function Hero() {
       <span className="hero-mark bl"></span>
       <span className="hero-mark br"></span>
 
-      <div className="hero-spine">EST. 2021 · CHENNAI ✶ PHILADELPHIA</div>
-      <div className="hero-issue">NO.01 / OFFICIAL</div>
-
       <div className="hero-inner">
         <div className="hero-aka"><span>ADITYA RAO</span> AKA</div>
         <h1 className="hero-h1" data-text="MANGAS">MANGAS</h1>
+        <div className="hero-aka hero-cities"><span>PHILADELPHIA</span> / CHENNAI</div>
       </div>
 
       <div className="hero-socials">

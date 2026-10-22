@@ -118,6 +118,7 @@
   text-transform: uppercase;
   margin-bottom: 4px;
 }
+.hero-cities { margin-bottom: 0; }
 .hero-aka span {
   color: #080604;
   background: var(--red);

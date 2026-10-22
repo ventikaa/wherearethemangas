@@ -16,14 +16,14 @@ export default function Discography({ onOpenBuriedAlive }) {
             </div>
             <div className="ba-tracklist">
               {[
-                'Turn the Wheel — Re-Vision',
-                'Patent Pending',
-                'Pretending',
+                '???',
                 "WHERE'S MY SMILE",
-                'Punkcity',
+                '???',
+                '???',
+                'Pretending',
+                '???',
                 'SOMETIMES IT FEELS LIKE THIS',
-                'Buried Alive (Ft. Paul David & HRTK)',
-                'The Buffet',
+                'Punkcity',
               ].map((name, i) => (
                 <div className="ba-track" key={i}>
                   <span className="ba-num">{String(i + 1).padStart(2, '0')}</span>

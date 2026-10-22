@@ -3,7 +3,6 @@ import { showData, festivalData } from './data/shows'
 
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Ticker from './components/Ticker'
 import NewRelease from './components/NewRelease'
 import Bio from './components/Bio'
 import QuickLinks from './components/QuickLinks'
@@ -30,8 +29,6 @@ import './styles/press.css'
 import './styles/merch.css'
 import './styles/photo-strip.css'
 import './styles/footer.css'
-
-const ticker2Items = ['WHERE ARE THE MANGAS', 'BOOK THE BAND', 'NEW MUSIC OUT NOW', "SLIDE INTO THE DM'S", 'CHENNAI // PHILADELPHIA']
 
 export default function App() {
   const [lightbox, setLightbox] = useState(null)
@@ -78,7 +75,6 @@ export default function App() {
       <FreshFinds />
       <Press />
       <PhotoStrip />
-      <Ticker items={ticker2Items} />
       <Footer />
 
       {lightbox && (

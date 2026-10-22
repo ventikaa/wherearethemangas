@@ -93,6 +93,14 @@ footer {
   flex-direction: column;
   gap: 6px;
 }
+.footer-booking + .footer-booking { margin-top: 22px; }
+.booking-region {
+  font-family: var(--font-s);
+  font-size: 11.5px;
+  letter-spacing: .32em;
+  color: var(--red);
+  text-transform: uppercase;
+}
 .booking-name {
   font-family: var(--font-d);
   font-size: 18px;
