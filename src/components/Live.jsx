@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 const row1Shows = [
   { key: 'rocktober', img: '/pics/philly/rocktober-poster.jpg', pos: 'top', alt: 'Rocktober at The Flood', outlet: 'Show', title: 'Rocktober — The Flood', meta: 'Philadelphia' },
   { key: 'temples-got-talent', alt: "Temple's Got Talent", outlet: 'Show', title: "Temple's Got Talent — Student Center", meta: 'Philadelphia' },
@@ -47,16 +45,6 @@ function LiveCard({ show, onClick }) {
 }
 
 export default function Live({ onOpenGallery }) {
-  const row1Ref = useRef(null)
-  const row2Ref = useRef(null)
-
-  useEffect(() => {
-    [row1Ref, row2Ref].forEach((ref) => {
-      const track = ref.current
-      if (track) track.innerHTML += track.innerHTML
-    })
-  }, [])
-
   return (
     <>
       <section id="live">
@@ -88,16 +76,16 @@ export default function Live({ onOpenGallery }) {
 
           <div className="live-scroll-wrap">
             <div className="live-scroll-row" id="liveRow1">
-              <div className="live-scroll-track" ref={row1Ref}>
-                {row1Shows.map((show, i) => (
+              <div className="live-scroll-track">
+                {[...row1Shows, ...row1Shows].map((show, i) => (
                   <LiveCard key={`${show.key}-${i}`} show={show} onClick={(key) => onOpenGallery(key, 'show')} />
                 ))}
               </div>
             </div>
 
             <div className="live-scroll-row reverse" id="liveRow2">
-              <div className="live-scroll-track" ref={row2Ref}>
-                {row2Shows.map((show, i) => (
+              <div className="live-scroll-track">
+                {[...row2Shows, ...row2Shows].map((show, i) => (
                   <LiveCard key={`${show.key}-${i}`} show={show} onClick={(key) => onOpenGallery(key, 'show')} />
                 ))}
               </div>

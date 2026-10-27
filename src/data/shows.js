@@ -154,6 +154,24 @@ export const showData = {
       '/pics/Catamaran/SHA_3524.jpg',
     ]
   },
+  'amplify': {
+    title: 'Hideaway',
+    photos: [
+      '/pics/goa amplify/GAR - 0253.JPEG',
+      '/pics/goa amplify/GAR - 0254.JPEG',
+      '/pics/goa amplify/GAR - 0259.JPEG',
+      '/pics/goa amplify/GAR - 0262.JPEG',
+    ]
+  },
+  'bonobo': {
+    title: 'BONOBO',
+    photos: [
+      '/pics/bonobo/1.png',
+      '/pics/bonobo/2.png',
+      '/pics/bonobo/3.png',
+      '/pics/bonobo/4.png',
+    ]
+  },
   'republik': {
     title: 'Republik',
     photos: ['/pics/Republik/DSC01180.jpg']
