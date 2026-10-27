@@ -164,21 +164,20 @@ export const festivalData = {
   'circle-of-love-2023': {
     title: 'Circle of Love 2023',
     photos: [
-      '/pics/festivals/Covelong_Classic Sharan-05453 (1).jpg',
+      '/pics/festivals/circle-of-love-2023-1.jpg',
       '/pics/festivals/circle-of-love-2023-2.jpg',
       '/pics/festivals/circle-of-love-2023-3.jpg',
-      '/pics/festivals/Covelong_Classic Sharan-05456.jpg',
-      '/pics/festivals/Covelong_Classic Sharan-05467.jpg',
+      '/pics/festivals/circle-of-love-2023-4.jpg',
     ]
   },
   'covelong-2023': {
     title: 'Surf Turf Covelong 2023',
     photos: [
       '/pics/festivals/covelong-2023-1.jpg',
+      '/pics/festivals/Covelong_Classic Sharan-05456.jpg',
       '/pics/festivals/covelong-2023-2.jpg',
+      '/pics/festivals/Covelong_Classic Sharan-05467.jpg',
       '/pics/festivals/covelong-2023-3.jpg',
-      '/pics/festivals/covelong-2023-4.jpg',
-      '/pics/festivals/covelong-2023-5.jpg',
     ]
   },
   'ric-chennai': {
