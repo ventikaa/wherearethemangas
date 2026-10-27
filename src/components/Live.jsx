@@ -23,7 +23,6 @@ const row2Shows = [
   { key: 'republik', img: '/pics/Republik/DSC01180.jpg', alt: 'Republik', outlet: 'Show', title: 'Republik', meta: 'Chennai' },
   { key: 'bonobo', img: '/pics/bonobo/3.png', alt: 'Bonobo', outlet: 'Show', title: 'BONOBO', meta: 'Mumbai' },
   { key: 'somad', img: '/pics/SOMAD solo/2A5A4227.jpg', alt: 'SOMAD solo', outlet: 'Show', title: 'SOMAD Social Select', meta: 'Chennai' },
-  { key: 'running-in-circles', img: '/pics/roc/roc4.jpg', alt: 'Running in Circles', outlet: 'Tour', title: 'Running in Circles Tour', meta: '2025' },
 ]
 
 function LiveCard({ show, onClick }) {

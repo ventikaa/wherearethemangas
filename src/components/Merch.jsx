@@ -4,6 +4,9 @@ const tabs = ['tshirts', 'stickers', 'accessories']
 const tabLabels = { tshirts: 'T-SHIRTS', stickers: 'STICKERS', accessories: 'ACCESSORIES' }
 
 const tshirts = [
+  { name: 'BURIED ALIVE MAP TEE - MAROON', status: 'NEW DROP', images: ['/pics/merch/tees/buried-alive-maroon-front.jpeg', '/pics/merch/tees/buried-alive-maroon-back.jpeg'] },
+  { name: 'BURIED ALIVE MAP TEE - BLACK', status: 'NEW DROP', images: ['/pics/merch/tees/buried-alive-black-front.jpeg', '/pics/merch/tees/buried-alive-black-back.jpeg'] },
+  { name: 'RATED M TEE - BLACK', status: 'NEW DROP', images: ['/pics/merch/tees/rated-m-tee.jpeg'] },
   { name: 'MANGAS JUICEBOX TEE', status: 'SOLD OUT', images: ['/pics/merch/tees/JUICEBOX-TEE FRONT.jpeg', '/pics/merch/tees/JUICEBOX-TEE BACK.jpeg'] },
   { name: 'WATM TEE - BLACK', status: 'SOLD OUT', images: ['/pics/merch/tees/matm-tee-front.jpeg', '/pics/merch/tees/matm-tee-back.jpeg'] },
   { name: "WHERE'S MY SMILE TEE", status: 'SOLD OUT', images: ['/pics/merch/tees/DYP.jpeg'] },
