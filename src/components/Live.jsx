@@ -20,7 +20,6 @@ const row2Shows = [
   { key: 'summer-bang-3', img: '/pics/sb3/Band 2 @ 24.jpg', alt: 'Summer Bang Chapter 3', outlet: 'First Show', title: 'Summer Bang Chapter 3', meta: 'Chennai' },
   { key: 'the-park', img: '/pics/The Park Anniversary/Park7.jpg', alt: 'The Park Hotel', outlet: 'Show', title: 'The Park Hotel', meta: 'Chennai' },
   { key: 'pondi', img: '/pics/Catamaran/SHA_3397.jpg', alt: 'Catamaran Brewing Co', outlet: 'Show', title: 'Catamaran Brewing Co', meta: 'Pondicherry' },
-  { key: 'circle-of-love-nye', img: '/pics/nycol/nycol2.jpg', alt: 'Circle of Love NYE 2', outlet: 'Festival', title: 'Circle of Love NYE', meta: 'Chennai' },
   { key: 'republik', img: '/pics/Republik/DSC01180.jpg', alt: 'Republik', outlet: 'Show', title: 'Republik', meta: 'Chennai' },
   { key: 'bonobo', img: '/pics/bonobo/3.png', alt: 'Bonobo', outlet: 'Show', title: 'BONOBO', meta: 'Mumbai' },
   { key: 'somad', img: '/pics/SOMAD solo/2A5A4227.jpg', alt: 'SOMAD solo', outlet: 'Show', title: 'SOMAD Social Select', meta: 'Chennai' },
