@@ -16,14 +16,14 @@ export default function Discography({ onOpenBuriedAlive }) {
             </div>
             <div className="ba-tracklist">
               {[
-                '???',
+                'Punkcity',
                 "WHERE'S MY SMILE",
                 '???',
                 '???',
                 'Pretending',
                 '???',
+                '???',
                 'SOMETIMES IT FEELS LIKE THIS',
-                'Punkcity',
               ].map((name, i) => (
                 <div className="ba-track" key={i}>
                   <span className="ba-num">{String(i + 1).padStart(2, '0')}</span>
