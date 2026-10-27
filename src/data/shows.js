@@ -1,4 +1,12 @@
 export const showData = {
+  'rocktober': {
+    title: 'Rocktober — The Flood',
+    photos: ['/pics/philly/rocktober-poster.jpg']
+  },
+  'fallpalooza': {
+    title: 'Fallpalooza — Bell Tower',
+    photos: ['/pics/philly/fallapalooza-poster.jpg']
+  },
   'summer-bang': {
     title: 'Summer Bang House Party',
     photos: [

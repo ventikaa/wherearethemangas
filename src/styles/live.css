@@ -230,6 +230,16 @@
   padding: 16px;
   position: absolute; inset: 0;
 }
+.live-img-fallback-show {
+  display: flex;
+  font-size: clamp(26px,3vw,36px);
+  line-height: 1;
+  letter-spacing: .06em;
+  color: var(--fg);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(191,28,18,.12) 14px 16px),
+    var(--bg3);
+}
 .live-body {
   padding: 20px 22px;
   position: relative;
