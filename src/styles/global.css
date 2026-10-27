@@ -526,6 +526,31 @@ body::after {
   .ff-grid { grid-template-columns: 1fr; }
 }
 
+.ff-spotlight {
+  border: 1px solid rgba(191,28,18,.45);
+  background: rgba(8,6,4,.55);
+  padding: clamp(24px,4vw,48px);
+  box-shadow: 8px 8px 0 rgba(191,28,18,.35);
+}
+
+.ff-left { position: relative; }
+.ff-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  z-index: 1;
+  background: var(--red);
+  color: var(--bg);
+  font-family: var(--font-s);
+  font-size: 11.5px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.4);
+}
+
 .ff-left img {
   width: 100%;
   max-width: 420px;
@@ -559,4 +584,59 @@ body::after {
 .ff-link {
   display: inline-block;
   text-decoration: none;
+}
+
+/* ── APPLE MUSIC PLAYLISTS ── */
+.ff-more { margin-top: clamp(56px,8vh,88px); }
+.ff-more-label {
+  font-family: var(--font-s);
+  font-size: 12px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.ff-more-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--fg-off);
+  opacity: .4;
+}
+.ff-playlists {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(14px,2vw,28px);
+}
+@media(max-width:900px) { .ff-playlists { grid-template-columns: repeat(3, 1fr); } }
+@media(max-width:560px) { .ff-playlists { grid-template-columns: repeat(2, 1fr); } }
+.ff-playlist img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(237,228,208,.12);
+  transition: transform .25s ease;
+}
+.ff-playlist:hover img { transform: translateY(-4px); }
+.ff-playlist-name {
+  font-family: var(--font-b);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin-top: 12px;
+  line-height: 1.15;
+}
+.ff-playlist-meta {
+  font-family: var(--font-s);
+  font-size: 11.5px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--fg-off);
+  margin-top: 4px;
 }
