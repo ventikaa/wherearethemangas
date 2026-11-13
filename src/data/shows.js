@@ -1,11 +1,38 @@
 export const showData = {
   'rocktober': {
     title: 'Rocktober — The Flood',
-    photos: ['/pics/philly/rocktober-poster.jpg']
+    photos: [
+      '/pics/philly/rocktober-poster.jpg',
+      '/pics/philly/rocktober/01.jpg',
+      '/pics/philly/rocktober/02.jpg',
+      '/pics/philly/rocktober/03.jpg',
+      '/pics/philly/rocktober/04.jpg',
+      '/pics/philly/rocktober/05.jpg',
+    ]
+  },
+  'temples-got-talent': {
+    title: "Temple's Got Talent — Student Center",
+    photos: [
+      '/pics/philly/temples-got-talent/01.jpg',
+      '/pics/philly/temples-got-talent/02.jpg',
+      '/pics/philly/temples-got-talent/03.jpg',
+      '/pics/philly/temples-got-talent/04.jpg',
+      '/pics/philly/temples-got-talent/05.jpg',
+    ]
   },
   'fallpalooza': {
     title: 'Fallpalooza — Bell Tower',
-    photos: ['/pics/philly/fallapalooza-poster.jpg']
+    photos: [
+      '/pics/philly/fallapalooza-poster.jpg',
+      '/pics/philly/fallpalooza/01.jpg',
+      '/pics/philly/fallpalooza/02.jpg',
+      '/pics/philly/fallpalooza/03.jpg',
+      '/pics/philly/fallpalooza/04.jpg',
+      '/pics/philly/fallpalooza/05.jpg',
+      '/pics/philly/fallpalooza/06.jpg',
+      '/pics/philly/fallpalooza/07.jpg',
+      '/pics/philly/fallpalooza/08.jpg',
+    ]
   },
   'summer-bang': {
     title: 'Summer Bang House Party',

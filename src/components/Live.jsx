@@ -1,7 +1,7 @@
 const row1Shows = [
-  { key: 'rocktober', img: '/pics/philly/rocktober-poster.jpg', pos: 'top', alt: 'Rocktober at The Flood', outlet: 'Show', title: 'Rocktober — The Flood', meta: 'Philadelphia' },
-  { key: 'temples-got-talent', alt: "Temple's Got Talent", outlet: 'Show', title: "Temple's Got Talent — Student Center", meta: 'Philadelphia' },
-  { key: 'fallpalooza', img: '/pics/philly/fallapalooza-poster.jpg', pos: 'top', alt: 'Fallpalooza at the Bell Tower', outlet: 'Festival', title: 'Fallpalooza — Bell Tower', meta: 'Philadelphia' },
+  { key: 'rocktober', img: '/pics/philly/rocktober/01.jpg', alt: 'Rocktober at The Flood', outlet: 'Show', title: 'Rocktober — The Flood', meta: 'Philadelphia' },
+  { key: 'temples-got-talent', img: '/pics/philly/temples-got-talent/01.jpg', alt: "Temple's Got Talent", outlet: 'Show', title: "Temple's Got Talent — Student Center", meta: 'Philadelphia' },
+  { key: 'fallpalooza', img: '/pics/philly/fallpalooza/08.jpg', alt: 'Fallpalooza at the Bell Tower', outlet: 'Festival', title: 'Fallpalooza — Bell Tower', meta: 'Philadelphia' },
   { key: 'summer-bang', img: '/pics/houseparty1.jpeg', alt: 'Summer Bang House Party', outlet: 'House Party', title: 'Summer Bang House Party', meta: 'Chennai' },
   { key: 'turn-up-devoid', img: '/pics/devoid/au3.jpg', alt: 'Turn Up for Devoid', outlet: 'Show', title: 'Turn Up for Devoid', meta: 'Chennai' },
   { key: 'running-in-circles', img: '/pics/roc/roc2.jpg', alt: 'Running in Circles Tour', outlet: 'Tour', title: 'Running in Circles Tour', meta: '2025' },
